@@ -1,0 +1,116 @@
+<!--index.wxml-->
+<view class="page">
+  <view class="page_hd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+    </view>
+  </view><!--页头-->
+  <view wx:if="{{!inputShowed}}">
+    <view class="page_bd" >
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{banner}}" wx:key="item.encodeId">
+          <swiper-item>
+            <image src="{{item.imageUrl}}" class="slide-image" width="100%" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view><!--主体-->
+    <view class="nav">
+        <text>日推</text>
+        <text>歌单</text>
+        <text>Top榜</text>
+        <text>电台</text>
+        <text>直播</text>
+    </view>
+    <view class="tuijian">
+      <view class="tuijianTitle">
+        <text class="left">推荐歌单</text>
+        <text class="right">歌单广场</text>
+      </view>
+      <view class="hotList">
+        <block wx:for="{{HotgeDan}}" wx:key="{{item.id}}">
+          <view class="hotDetail">
+            <image src="{{item.coverImgUrl}}"/>
+            <view>
+              <text>{{item.name}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="tuijian">
+      <view class="tuijianTitle">
+        <view class="left">
+          <text>新碟上架</text>
+        </view>
+        <text class="right">更多新碟</text>
+      </view>
+      <view class="hotList">
+        <block wx:for="{{NewAlbum}}" wx:key="{{item.status}}">
+          <view class="hotDetail">
+            <image src="{{item.blurPicUrl}}"/>
+            <view>
+              <text>{{item.artists[0].name}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="tuijian">
+      <view class="tuijianTitle">
+        <view class="left">
+          <text>新歌速递</text>
+        </view>
+        <text class="right"> 更多新歌</text>
+      </view>
+      <view>
+        <block wx:for="{{NewSong}}" wx:for-index="bindex" wx:key="{{item.copyrightId}}">
+          <view class="songList" data-id="{{item.id}}" bindtap="toplayer" wx:if='{{bindex<10}}'>
+            <view>
+              <image src="../../images/audio.png"/>
+              <view class="songContent">
+                <view class="songtitle">  {{item.name}}</view>
+                <view class="songAuthor">  {{item.artists[0].name}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
