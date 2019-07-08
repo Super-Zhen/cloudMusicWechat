@@ -1,11 +1,37 @@
 <!--pages/player/player.wxml-->
+<view class="content">
 <image src="{{songsDetail.al.picUrl}}" class="bgimg"/>
-<view class="box">
 
-  <view animation="{{animationData}}" class="announcement-text">{{songsDetail.name}}({{songsDetail.alia[0]}})</view>
-  <block wx:for="{{songsDetail.ar}}" wx:key="{{songsDetail.id}}">
-    <text data-id="{{item.id}}">{{item.name}}</text>
-  </block>
-  <view bindtap="playOrPause">暂停</view>
+  <view class="box">
+    <swiper autoplay interval="500" duration="30000" circular="true" style="height: 48rpx">
+      <block wx:for="{{animationData}}" wx:key="">
+        <swiper-item class="announcement-text">
+          <text>{{item}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="textCenter font26 colorfff singer">
+      <block wx:for="{{songsDetail.ar}}" wx:key="{{songsDetail.id}}">
+        <text data-id="{{item.id}}">{{item.name}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="lyricBox">
+    <view class="pic" style="animation-play-state:{{state}};">
+      <image src="{{songsDetail.al.picUrl}}" style="animation: picMove 10s infinite linear;animation-play-state:{{state}};"/>
+    </view>
+  </view>
+  <view class="buttonList">
+    <view >
+      <image class="" src="../../images/previousSong.png" />
+    </view>
+    <view bindtap="playOrPause">
+      <image src="{{active?'../../images/pauseSong.png':'../../images/playSong.png'}}" />
+    </view>
+    <view>
+      <image class="" src="../../images/nextSongs.png" />
+    </view>
+  </view>
 </view>
+
 

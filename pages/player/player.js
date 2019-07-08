@@ -15,10 +15,12 @@ Page({
   data: {
     BackgroundAudioManager:'', // 背景音乐示例
     InnerAudioContext:'',
-    // isPlay:true,
-    isPlay:false,
+    active:true,
+    // active:false,
+    state:'running',
     songUrl:'',
-    songsDetail:''
+    songsDetail:'',
+    animationData:[]
   },
 
   /**
@@ -50,7 +52,7 @@ Page({
     })
     API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
       if(res.code === 200 && res.data[0].url) {
-        // this.createAudioManager(res.data[0].url)
+        this.createAudioManager(res.data[0].url)
       }else{
         console.log('player 52行 出错了')
       }
@@ -60,10 +62,12 @@ Page({
         wx.setNavigationBarTitle({
           title: res.songs[0].name
         })
+        let songTitle = `${res.songs[0].name} (${res.songs[0].alia[0]}) `
+        console.log(songTitle)
         this.setData({
-          songsDetail: res.songs[0]
+          songsDetail: res.songs[0],
+          animationData:[songTitle,songTitle,songTitle]
         })
-        this.marqueeTitle()
       }
     })
     API.getSongLyric({id:id}).then(res=>{
@@ -92,22 +96,29 @@ Page({
 
     })
   },
-  marqueeTitle(){
+  marqueeTitle(ele){
     let animation = wx.createAnimation({
       duration:1000,
       timingFunction:'linear'
     })
+    animation.translate(-Number(ele.length*13),0).step()
+    this.setData({
+      animationData: animation.export()
+    })
   },
   playOrPause(){
-    if(this.data.isPlay){
+    if(this.data.active){
       this.data.BackgroundAudioManager.pause()
       this.setData({
-        isPlay:false
+        active:false,
+        state:'paused'
+
       })
     }else{
       this.data.BackgroundAudioManager.play()
       this.setData({
-        isPlay:true
+        active:true,
+        state:'running'
       })
     }
   },
