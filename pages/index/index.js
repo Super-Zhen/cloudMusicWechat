@@ -1,4 +1,5 @@
 const API = require('../../apiData/api')
+const app = getApp()
 Page({
   data: {
     inputShowed: false,
@@ -78,16 +79,20 @@ Page({
   toplayer(e){
     let id = e.currentTarget.dataset.id
     console.log(id)
-    wx.navigateTo({
-      url: `../player/player?id=${id}`,
-      // events: {
-      //   acceptDataFromOpenedPage: function(data) {
-      //     console.log(data)
-      //   }
-      // },
-      // success: function(res) {
-      //   res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
-      // }
+    API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
+      if(res.code === 200 && res.data[0].url) {
+        wx.navigateTo({
+          url: `../player/player?id=${id}`,
+        })
+      }else if(res.data[0].fee=== 4){ // 判断歌曲是否是付费歌曲4 ，或者试听其中一段歌曲1，一般标准歌曲8
+        wx.showToast({
+          title: '数字专辑,需要单独付费',
+          icon: 'none',
+          duration: 2000
+        })
+      }else{
+        console.log('player 52行 出错了')
+      }
     })
   },
   onLoad(){

@@ -1,2 +1,11 @@
 <!--pages/player/player.wxml-->
-<text>pages/player/player.wxml{{songUrl}}</text>
+<image src="{{songsDetail.al.picUrl}}" class="bgimg"/>
+<view class="box">
+
+  <view animation="{{animationData}}" class="announcement-text">{{songsDetail.name}}({{songsDetail.alia[0]}})</view>
+  <block wx:for="{{songsDetail.ar}}" wx:key="{{songsDetail.id}}">
+    <text data-id="{{item.id}}">{{item.name}}</text>
+  </block>
+  <view bindtap="playOrPause">暂停</view>
+</view>
+

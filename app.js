@@ -40,6 +40,7 @@ App({
   },
   globalData: {
     userInfo: null,
+    playList:[]
     // songId:[],
     // songImg:[],
     // waitForPlaying:[],
