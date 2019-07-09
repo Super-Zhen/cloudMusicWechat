@@ -1,5 +1,5 @@
 //app.js
-const BASEURL = 'http://172.20.10.2:3000'
+const BASEURL = 'http://10.6.0.62:3000'
 const requestData = (url , data ) => {
   let httpUrl = BASEURL + url
   return new Promise((resolve, reject) => {

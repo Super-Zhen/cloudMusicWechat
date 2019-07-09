@@ -79,12 +79,12 @@ page,.content{
     height: 500rpx;
   }
   75%{
-    width: 550prx;
-    height: 550rpx;
+    width: 490prx;
+    height: 490rpx;
   }
   100%{
-    width:600rpx;
-    height: 600rpx;
+    width:450rpx;
+    height: 450rpx;
   }
 
 }

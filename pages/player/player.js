@@ -7,6 +7,7 @@
  */
 
 const API = require('../../apiData/api')
+const app = getApp()
 Page({
 
   /**
@@ -19,6 +20,7 @@ Page({
     // active:false,
     state:'running',
     songUrl:'',
+    bgColor:'gray',
     songsDetail:'',
     animationData:[]
   },
@@ -27,8 +29,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    console.log(options) // 需要将歌曲id存入到全局变量中（点击同一首歌的时候，会再次请求歌曲详情和歌词）（）
+    app.globalData.songId = options.id // 需要将歌曲id存入到全局变量中（点击同一首歌的时候，会再次请求歌曲详情和歌词）（）
+    console.log(options) 
     this.playSong(options.id)
 
     // const innerAudioContext = wx.createInnerAudioContext()
@@ -49,12 +51,16 @@ Page({
     const InnerAudioContext = wx.createInnerAudioContext()
     this.setData({
       InnerAudioContext: InnerAudioContext,
+      bgColor:'gray'
     })
     API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
       if(res.code === 200 && res.data[0].url) {
         this.createAudioManager(res.data[0].url)
+        if(!this.data.active){
+          this.data.BackgroundAudioManager.pause()
+        }
       }else{
-        console.log('player 52行 出错了')
+        console.log('player 58行 出错了')
       }
     })
     API.getSongDetail({ids:id}).then(res=> {
@@ -62,8 +68,8 @@ Page({
         wx.setNavigationBarTitle({
           title: res.songs[0].name
         })
-        let songTitle = `${res.songs[0].name} (${res.songs[0].alia[0]}) `
-        console.log(songTitle)
+        let alia = res.songs[0].alia[0]?'('+res.songs[0].alia[0]+')':''
+        let songTitle = `${res.songs[0].name}  ${alia}`
         this.setData({
           songsDetail: res.songs[0],
           animationData:[songTitle,songTitle,songTitle]
@@ -96,16 +102,6 @@ Page({
 
     })
   },
-  marqueeTitle(ele){
-    let animation = wx.createAnimation({
-      duration:1000,
-      timingFunction:'linear'
-    })
-    animation.translate(-Number(ele.length*13),0).step()
-    this.setData({
-      animationData: animation.export()
-    })
-  },
   playOrPause(){
     if(this.data.active){
       this.data.BackgroundAudioManager.pause()
@@ -121,6 +117,31 @@ Page({
         state:'running'
       })
     }
+  },
+  toNextSong(){
+    let index = Number(app.globalData.playList.indexOf(app.globalData.songId))
+    if((index+1)>app.globalData.playList.length){
+      this.playSong(app.globalData.playList[0])
+      app.globalData.songId = app.globalData.playList[0]
+    }else{
+      this.playSong(app.globalData.playList[index+1])
+      app.globalData.songId = app.globalData.playList[index + 1]
+    }
+  },
+  toPreviousSong(){
+    let index = Number(app.globalData.playList.indexOf(app.globalData.songId))
+    if((index+1)>app.globalData.playList.length){
+      this.playSong(app.globalData.playList[0])
+      app.globalData.songId = app.globalData.playList[0]
+    }else{
+      this.playSong(app.globalData.playList[index+1])
+      app.globalData.songId = app.globalData.playList[index + 1]
+    }
+  },
+  imageLoad(){
+    this.setData({
+      bgColor:''
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

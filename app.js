@@ -40,8 +40,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    playList:[]
-    // songId:[],
+    playList:[],
+    songId:[],
     // songImg:[],
     // waitForPlaying:[],
     // songName:[]

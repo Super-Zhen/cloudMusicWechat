@@ -1,6 +1,6 @@
 <!--pages/player/player.wxml-->
-<view class="content">
-<image src="{{songsDetail.al.picUrl}}" class="bgimg"/>
+<view class="content" style="background:{{bgColor}}">
+<image src="{{songsDetail.al.picUrl}}" class="bgimg" bindload="imageLoad"/>
 
   <view class="box">
     <swiper autoplay interval="500" duration="30000" circular="true" style="height: 48rpx">
@@ -23,13 +23,19 @@
   </view>
   <view class="buttonList">
     <view >
+      <image class="" src="../../images/liebiaoxunhuan.png" />
+    </view>
+    <view bindtap="toPreviousSong">
       <image class="" src="../../images/previousSong.png" />
     </view>
     <view bindtap="playOrPause">
       <image src="{{active?'../../images/pauseSong.png':'../../images/playSong.png'}}" />
     </view>
-    <view>
+    <view bindtap="toNextSong">
       <image class="" src="../../images/nextSongs.png" />
+    </view>
+    <view>
+      <image class="" src="../../images/SongMenu.png" />
     </view>
   </view>
 </view>

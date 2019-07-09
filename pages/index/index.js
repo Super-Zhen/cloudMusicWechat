@@ -37,6 +37,9 @@ Page({
   getNewSong(){ // 获取新歌
     API.getNewSong().then(res => {
       if(res.code === 200) {
+        app.globalData.playList = res.data.map((item)=>{
+          return String(item.id)
+        })
         this.setData({
           NewSong: res.data
         })
@@ -91,7 +94,7 @@ Page({
           duration: 2000
         })
       }else{
-        console.log('player 52行 出错了')
+        console.log('index 94行 出错了')
       }
     })
   },
