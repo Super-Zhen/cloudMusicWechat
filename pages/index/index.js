@@ -37,9 +37,7 @@ Page({
   getNewSong(){ // 获取新歌
     API.getNewSong().then(res => {
       if(res.code === 200) {
-        app.globalData.playList = res.data.map((item)=>{
-          return String(item.id)
-        })
+
         this.setData({
           NewSong: res.data
         })
@@ -80,10 +78,14 @@ Page({
     });
   },
   toplayer(e){
+    let that = this
     let id = e.currentTarget.dataset.id
     console.log(id)
     API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
       if(res.code === 200 && res.data[0].url) {
+        app.globalData.playList = that.map((item)=>{
+          return String(item.id)
+        })
         wx.navigateTo({
           url: `../player/player?id=${id}`,
         })
@@ -98,10 +100,16 @@ Page({
       }
     })
   },
+  torecommend(){
+    wx.navigateTo({
+      url: '../recommend/recommend',
+    })
+  },
   onLoad(){
     this.getBanner()
     this.getHotGedan()
     this.getNewAlbum()
     this.getNewSong()
+    wx.setStorageSync('repeaType','repeat')
   }
 });

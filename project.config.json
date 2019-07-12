@@ -5,15 +5,15 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
+		"es6": false,
+		"postcss": false,
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.3",
+	"libVersion": "2.7.4",
 	"appid": "wx9b960b2ccc97a5c3",
 	"projectname": "cloudMusicWechat",
 	"debugOptions": {

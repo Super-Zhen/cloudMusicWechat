@@ -22,17 +22,23 @@ Page({
     songUrl:'',
     bgColor:'gray',
     songsDetail:'',
-    animationData:[]
+    animationData:[],
+    repeatType:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // wx.showLoading({
+    //   title: '加载中',
+    // });
     app.globalData.songId = options.id // 需要将歌曲id存入到全局变量中（点击同一首歌的时候，会再次请求歌曲详情和歌词）（）
     console.log(options) 
     this.playSong(options.id)
-
+    this.setData({
+      repeatType:wx.getStorageSync('repeaType')
+    })
     // const innerAudioContext = wx.createInnerAudioContext()
     // innerAudioContext.autoplay = true
     // innerAudioContext.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
@@ -60,7 +66,10 @@ Page({
           this.data.BackgroundAudioManager.pause()
         }
       }else{
-        console.log('player 58行 出错了')
+        wx.showModal({
+          title: '',
+          content: '',
+        })
       }
     })
     API.getSongDetail({ids:id}).then(res=> {
@@ -142,6 +151,16 @@ Page({
     this.setData({
       bgColor:''
     })
+  },
+  repeaType(e){
+    let that = this
+    console.log(e.currentTarget.dataset.type)
+    switch (e.currentTarget.dataset.type){
+      case 'repeat':
+        that.setData({
+          
+        })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

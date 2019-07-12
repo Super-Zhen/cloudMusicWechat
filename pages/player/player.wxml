@@ -22,8 +22,10 @@
     </view>
   </view>
   <view class="buttonList">
-    <view >
-      <image class="" src="../../images/liebiaoxunhuan.png" />
+    <view bindtap="repeaType" data-type="{{repeatType}}">
+      <image class="" wx:if="{{repeatType==='repeat'}}" src="../../images/liebiaoxunhuan.png" />
+      <image class="" wx:if="{{repeatType==='repeatOne'}}" src="../../images/liebiaoxunhuan.png" />
+      <image class="" wx:if="{{repeatType==='repeatRandom'}}" src="../../images/liebiaoxunhuan.png" />
     </view>
     <view bindtap="toPreviousSong">
       <image class="" src="../../images/previousSong.png" />

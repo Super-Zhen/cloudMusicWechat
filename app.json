@@ -2,7 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/player/player"
+    "pages/player/player",
+    "pages/login/login",
+    "pages/me/me",
+    "pages/recommend/recommend"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -41,13 +44,15 @@
         "selectedIconPath": "images/friendsActive.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/me/me",
         "text": "账号",
         "iconPath": "images/me.png",
         "selectedIconPath": "images/meActive.png"
       }
     ]
   },
-  "requiredBackgroundModes": ["audio"],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "sitemapLocation": "sitemap.json"
 }
