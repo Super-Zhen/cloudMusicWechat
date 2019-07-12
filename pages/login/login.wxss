@@ -1,0 +1,46 @@
+/* pages/login/login.wxss */
+page,.bgColor{
+  background-color: #e6443b;
+  width: 100%;
+  height:100%;
+}
+.top{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  animation: myAnimation 10s infinite linear;
+}
+@keyframes myAnimation{
+  0%{
+    transform: rotate(0)
+  }
+  100%{
+    transform: rotate(360deg)
+  }
+}
+.loginForm {
+  width: 80%;
+  margin: 0 auto;
+}
+.loginForm input{
+  width: 98%;
+  height: 94rpx;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+  padding-left: 10rpx;
+  background: #fff;
+}
+.textIndent{
+  text-indent: 10rpx;
+}
+.loginForm button{
+  background: #fff;
+  color:red
+}

@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+<view class='bgColor'>
+  <view class='top'>
+    <image src='../../images/music.png'/>
+  </view>
+  <view class="loginForm">
+    <form bindsubmit="formSubmit" >
+        <view>
+          <input name='phone' placeholder='请输入手机号' placeholder-class="textIndent" type='number'/>
+        </view>
+        <view>
+        <input name='password' placeholder='请输入密码' placeholder-class="textIndent" type='text'/>
+        </view>
+        <view>
+          <button form-type='submit'><text decode="true">登&nbsp;&nbsp;&nbsp;录</text></button>
+        </view>
+    </form>
+  </view>
+</view>

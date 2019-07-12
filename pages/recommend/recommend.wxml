@@ -1,0 +1,21 @@
+<!--pages/recommend/recommend.wxml-->
+<view>
+  <view wx:for='{{recommend}}' wx:key='item.id' class='recommendDetail'  data-id="{{item.id}}" bindtap="toplayer">
+    <image src='{{item.album.blurPicUrl}}'/>
+    <view class='Songtitle'>
+      <view class='name'>{{item.name}}</view>
+      <view class='albumName'>{{item.artists[0].name}}-{{item.album.name}}</view>
+    </view>
+  </view>
+  <!--<block wx:for="{{recommend}}" wx:for-index="bindex" wx:key="{{item.id}}">-->
+    <!--<view class="songList" data-id="{{item.id}}" bindtap="toplayer" wx:if='{{bindex<10}}'>-->
+      <!--<view>-->
+        <!--<image src="../../images/audio.png"/>-->
+        <!--<view class="songContent">-->
+          <!--<view class="songtitle">  {{item.name}}</view>-->
+          <!--<view class="songAuthor">  {{item.artists[0].name}}</view>-->
+        <!--</view>-->
+      <!--</view>-->
+    <!--</view>-->
+  <!--</block>-->
+</view>
