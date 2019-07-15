@@ -1,6 +1,10 @@
 /* pages/player/player.wxss */
 page,.content{
   height:100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
 }
 .bgimg{
   width: 100%;
@@ -34,6 +38,21 @@ page,.content{
   justify-content: center;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
+}
+.lyric{
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+.lyric text{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  font-size:28rpx;
+  line-height:50rpx;
+  color: orange;
 }
 .pic{
   width: 400rpx;

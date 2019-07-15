@@ -23,7 +23,10 @@ Page({
     bgColor:'gray',
     songsDetail:'',
     animationData:[],
-    repeatType:''
+    repeatType:'',
+    isShow:'true',
+    lyric:'',
+    top:'400'
   },
 
   /**
@@ -39,6 +42,7 @@ Page({
     this.setData({
       repeatType:wx.getStorageSync('repeaType')
     })
+
     // const innerAudioContext = wx.createInnerAudioContext()
     // innerAudioContext.autoplay = true
     // innerAudioContext.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
@@ -87,6 +91,16 @@ Page({
     })
     API.getSongLyric({id:id}).then(res=>{
       console.log(res)
+      if(res.code==200){
+        this.setData({
+          lyric: res.lyric.replace(/\[[0-9]{2}:[0-9]{2}\.[0-9]{3}\]/g,'')
+        })
+      }
+    })
+  },
+  lyricShow(){
+    this.setData({
+      isShow: !this.data.isShow
     })
   },
   /**
@@ -100,6 +114,13 @@ Page({
     })
     BackgroundAudioManager.title = 'title'
     BackgroundAudioManager.src = url
+    this.data.BackgroundAudioManager.onTimeUpdate(()=>{
+     // console.log(this.data.BackgroundAudioManager.currentTime)
+
+    })
+    this.data.BackgroundAudioManager.onEnded(()=>{
+      console.log(1111)
+    })
     // 这儿是否设置自动播放
     // BackgroundAudioManager.play()
     // 监听背景音乐播放
@@ -114,13 +135,32 @@ Page({
   playOrPause(){
     if(this.data.active){
       this.data.BackgroundAudioManager.pause()
+      this.data.BackgroundAudioManager.onTimeUpdate(()=>{
+       // console.log(this.data.BackgroundAudioManager.currentTime)
+      })
+      this.data.BackgroundAudioManager.onEnded(()=>{
+        console.log(1111)
+      })
       this.setData({
         active:false,
         state:'paused'
-
       })
     }else{
       this.data.BackgroundAudioManager.play()
+      this.data.BackgroundAudioManager.onTimeUpdate(()=>{
+        //console.log(this.data.BackgroundAudioManager.currentTime)
+      })
+      this.data.BackgroundAudioManager.onEnded(()=>{
+        if(this.data.BackgroundAudioManager.currentTime === 0){
+          if(this.data.repeatType = 'repeatOne'){
+            this.playSong(app.globalData.songId)
+          }else if(this.data.repeatType = 'repeat'){
+            this.toNextSong()
+          }else {
+            this.playSong(app.globalData.playList[Math.floor((Math.random()*app.globalData.playList.length))])
+          }
+        }
+      })
       this.setData({
         active:true,
         state:'running'
@@ -152,14 +192,34 @@ Page({
       bgColor:''
     })
   },
+  /**
+   * 传入当前的循环类型
+   * @param e
+   */
   repeaType(e){
     let that = this
     console.log(e.currentTarget.dataset.type)
     switch (e.currentTarget.dataset.type){
       case 'repeat':
         that.setData({
-          
+          repeatType: 'repeatOne'
         })
+        console.log(app.globalData.songId)
+        wx.setStorageSync('repeaType','repeatOne')
+      break;
+      case 'repeatOne':
+        that.setData({
+          repeatType: 'repeatRandom'
+        })
+
+        wx.setStorageSync('repeaType','repeatRandom')
+      break;
+      case 'repeatRandom':
+        that.setData({
+          repeatType: 'repeat'
+        })
+        wx.setStorageSync('repeaType','repeat')
+      break;
     }
   },
   /**

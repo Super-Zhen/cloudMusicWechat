@@ -17,15 +17,20 @@
     </view>
   </view>
   <view class="lyricBox">
-    <view class="pic" style="animation-play-state:{{state}};">
+    <view class="pic" style="animation-play-state:{{state}};" wx:if='{{isShow}}' bindtap='lyricShow'>
       <image src="{{songsDetail.al.picUrl}}" style="animation: picMove 10s infinite linear;animation-play-state:{{state}};"/>
     </view>
+    <scroll-view scroll-y wx:if='{{!isShow}}' style="height: 100%;" bindtap='lyricShow'>
+      <view  class="lyric">
+        <text style="top:{{top}}rpx">{{lyric}}</text>
+      </view>
+    </scroll-view>
   </view>
   <view class="buttonList">
     <view bindtap="repeaType" data-type="{{repeatType}}">
-      <image class="" wx:if="{{repeatType==='repeat'}}" src="../../images/liebiaoxunhuan.png" />
-      <image class="" wx:if="{{repeatType==='repeatOne'}}" src="../../images/liebiaoxunhuan.png" />
-      <image class="" wx:if="{{repeatType==='repeatRandom'}}" src="../../images/liebiaoxunhuan.png" />
+      <image class="" wx:if="{{repeatType=='repeat'}}" src="../../images/liebiaoxunhuan.png" />
+      <image class="" wx:if="{{repeatType=='repeatOne'}}" src="../../images/danquxunhuan.png" />
+      <image class="" wx:if="{{repeatType=='repeatRandom'}}" src="../../images/suijibofang.png" />
     </view>
     <view bindtap="toPreviousSong">
       <image class="" src="../../images/previousSong.png" />

@@ -83,7 +83,7 @@ Page({
     console.log(id)
     API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
       if(res.code === 200 && res.data[0].url) {
-        app.globalData.playList = that.map((item)=>{
+        app.globalData.playList = that.data.NewSong.map((item)=>{
           return String(item.id)
         })
         wx.navigateTo({
