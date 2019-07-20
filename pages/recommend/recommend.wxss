@@ -1,5 +1,5 @@
 /* pages/recommend/recommend.wxss */
-page{
+.page{
   width:95%;
   margin: 0 auto;
 }

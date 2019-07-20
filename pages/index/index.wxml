@@ -1,8 +1,8 @@
 <!--index.wxml-->
-<view class="page">
-  <view class="page_hd">
+<view style="overflow: hidden;position: sticky;top:0;background: #fff">
+  <view class="page_hd" style="width:{{width}}">
     <view class="weui-search-bar">
-      <view class="weui-search-bar__form">
+      <view class="weui-search-bar__form" style="overflow: hidden">
         <view class="weui-search-bar__box">
           <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
           <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
@@ -40,6 +40,11 @@
       </navigator>
     </view>
   </view><!--页头-->
+  <view class="music" wx:if="{{songId.length>0}}">
+    <image src="../../images/musicActive.png" style="animation-play-state:{{songState}}" bindtap="toplayer" data-id="index"></image>
+  </view>
+</view>
+<view class="page">
   <view wx:if="{{!inputShowed}}">
     <view class="page_bd" >
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">

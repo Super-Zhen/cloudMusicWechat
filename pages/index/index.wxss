@@ -3,6 +3,31 @@
   width: 96%;
   margin:10rpx auto;
 }
+.page_hd{
+
+  float: left;
+}
+.music{
+  width: 10%;
+  height: 90rpx;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music image{
+  width:50rpx;
+  height:50rpx;
+  animation: myAnimation 10s infinite linear;
+}
+@keyframes myAnimation{
+  0%{
+    transform: rotate(0)
+  }
+  100%{
+    transform: rotate(360deg)
+  }
+}
 .weui-search-bar{
   border:0;
   background: transparent;

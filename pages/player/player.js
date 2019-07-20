@@ -26,7 +26,7 @@ Page({
     repeatType:'',
     isShow:'true',
     lyric:'',
-    top:'400'
+    top:'400',
   },
 
   /**
@@ -36,32 +36,25 @@ Page({
     // wx.showLoading({
     //   title: '加载中',
     // });
-    app.globalData.songId = options.id // 需要将歌曲id存入到全局变量中（点击同一首歌的时候，会再次请求歌曲详情和歌词）（）
-    console.log(options) 
-    this.playSong(options.id)
-    this.setData({
-      repeatType:wx.getStorageSync('repeaType')
-    })
-
-    // const innerAudioContext = wx.createInnerAudioContext()
-    // innerAudioContext.autoplay = true
-    // innerAudioContext.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
-    // innerAudioContext.onPlay(() => {
-    //   console.log('开始播放')
-    // })
-    // innerAudioContext.onError((res) => {
-    //   console.log(res.errMsg)
-    //   console.log(res.errCode)
-    // })
+    if(options.id !== 'index'){
+      app.globalData.songId = options.id // 需要将歌曲id存入到全局变量中（点击同一首歌的时候，会再次请求歌曲详情和歌词）（）
+      console.log(options)
+      // this.playSong(options.id)
+      this.setData({
+        repeatType:wx.getStorageSync('repeatType')
+      })
+    }
+    this.playSong(app.globalData.songId,options.id)
   },
   /**
    * 播放歌曲
    */
-  playSong(id) {
+  playSong(id,flag) {
+    let that = this
     let songName=''
     const InnerAudioContext = wx.createInnerAudioContext()
-    this.setData({
-      InnerAudioContext: InnerAudioContext,
+    that.setData({
+      // InnerAudioContext: InnerAudioContext,
       bgColor:'gray'
     })
     API.getSongDetail({ids:id}).then(res=> {
@@ -72,23 +65,28 @@ Page({
         songName = res.songs[0].name
         let alia = res.songs[0].alia[0]?'('+res.songs[0].alia[0]+')':''
         let songTitle = `${res.songs[0].name}  ${alia}`
-        this.setData({
+        that.setData({
           songsDetail: res.songs[0],
           animationData:[songTitle,songTitle,songTitle]
         })
-        API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
-          if(res.code === 200 && res.data[0].url) {
-            this.createAudioManager(res.data[0].url,songName)
-            if(!this.data.active){
-              this.data.BackgroundAudioManager.pause()
+        if(flag === 'index'){
+
+        }else{
+          API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
+            if(res.code === 200 && res.data[0].url) {
+              this.createAudioManager(res.data[0].url,songName)
+              if(!that.data.active){
+                this.data.BackgroundAudioManager.pause()
+                app.globalData.songState = false
+              }
+            }else{
+              wx.showModal({
+                title: '',
+                content: '',
+              })
             }
-          }else{
-            wx.showModal({
-              title: '',
-              content: '',
-            })
-          }
-        })
+          })
+        }
       }
     })
     API.getSongLyric({id:id}).then(res=>{
@@ -115,9 +113,10 @@ Page({
     this.setData({
       BackgroundAudioManager:BackgroundAudioManager
     })
+    app.globalData.songState = true
     BackgroundAudioManager.title = title
     BackgroundAudioManager.src = url
-    this.data.BackgroundAudioManager.onTimeUpdate(()=>{
+    BackgroundAudioManager.onTimeUpdate(()=>{
      // console.log(this.data.BackgroundAudioManager.currentTime)
 
     })
@@ -134,7 +133,8 @@ Page({
   },
   playOrPause(){
     if(this.data.active){
-      this.data.BackgroundAudioManager.pause()
+      wx.getBackgroundAudioManager().pause()
+      app.globalData.songState = false
       this.data.BackgroundAudioManager.onTimeUpdate(()=>{
        // console.log(this.data.BackgroundAudioManager.currentTime)
       })
@@ -147,6 +147,7 @@ Page({
       })
     }else{
       this.data.BackgroundAudioManager.play()
+      app.globalData.songState = true
       this.data.BackgroundAudioManager.onTimeUpdate(()=>{
         //console.log(this.data.BackgroundAudioManager.currentTime)
       })
@@ -204,7 +205,7 @@ Page({
    * 传入当前的循环类型
    * @param e
    */
-  repeaType(e){
+  repeatType(e){
     let that = this
     console.log(e.currentTarget.dataset.type)
     switch (e.currentTarget.dataset.type){
@@ -213,20 +214,20 @@ Page({
           repeatType: 'repeatOne'
         })
         console.log(app.globalData.songId)
-        wx.setStorageSync('repeaType','repeatOne')
+        wx.setStorageSync('repeatType','repeatOne')
       break;
       case 'repeatOne':
         that.setData({
           repeatType: 'repeatRandom'
         })
 
-        wx.setStorageSync('repeaType','repeatRandom')
+        wx.setStorageSync('repeatType','repeatRandom')
       break;
       case 'repeatRandom':
         that.setData({
           repeatType: 'repeat'
         })
-        wx.setStorageSync('repeaType','repeat')
+        wx.setStorageSync('repeatType','repeat')
       break;
     }
   },
@@ -241,7 +242,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      repeatType:wx.getStorageSync('repeatType')
+    })
   },
 
   /**

@@ -1,6 +1,6 @@
 <!--pages/player/player.wxml-->
 <view class="content" style="background:{{bgColor}}">
-<image src="{{songsDetail.al.picUrl}}" class="bgimg" bindload="imageLoad"/>
+<image src="{{songsDetail.al.picUrl}}" class="bgimg" bindload="imageLoad"></image>
 
   <view class="box">
     <swiper autoplay interval="500" duration="30000" circular="true" style="height: 48rpx">
@@ -16,7 +16,7 @@
       </block>
     </view>
   </view>
-  <view class="lyricBox">
+  <view class="lyricBox lyricBoxBg">
     <view class="pic" style="animation-play-state:{{state}};" wx:if='{{isShow}}' bindtap='lyricShow'>
       <image src="{{songsDetail.al.picUrl}}" style="animation: picMove 10s infinite linear;animation-play-state:{{state}};"/>
     </view>
@@ -27,7 +27,7 @@
     </scroll-view>
   </view>
   <view class="buttonList">
-    <view bindtap="repeaType" data-type="{{repeatType}}">
+    <view bindtap="repeatType" data-type="{{repeatType}}">
       <image class="" wx:if="{{repeatType=='repeat'}}" src="../../images/liebiaoxunhuan.png" />
       <image class="" wx:if="{{repeatType=='repeatOne'}}" src="../../images/danquxunhuan.png" />
       <image class="" wx:if="{{repeatType=='repeatRandom'}}" src="../../images/suijibofang.png" />

@@ -7,7 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    recommendList:''
+    recommendList:'',
+    songState : app.globalData.songState?'running':'paused',
+    songId: app.globalData.songId,
+    width:app.globalData.songId.length>0?'90%':'100%',
+    inputShowed: false,
+    inputVal: "",
   },
 
   /**
@@ -16,6 +21,27 @@ Page({
   onLoad: function (options) {
     this.getRecommend()
     API.getMobileType()
+  },
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
+  hideInput: function () {
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
+  },
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
+  inputTyping: function (e) {
+    this.setData({
+      inputVal: e.detail.value
+    });
   },
   getRecommend(){
     API.getRecommend().then(res=>{
@@ -28,11 +54,14 @@ Page({
     })
   },
   toplayer(e){
-    app.globalData.playList = this.data.recommend.map(item=>{
-      return String(item.id)
-    })
-    app.globalData.songId = e.currentTarget.dataset.id
-    API.toplayer(e)
+    if(e.currentTarget.dataset.id !== 'index'){
+      app.globalData.playList = this.data.recommend.map(item=>{
+        return String(item.id)
+      })
+
+      app.globalData.songId = e.currentTarget.dataset.id
+    }
+      API.toplayer(e)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -45,7 +74,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      songState : app.globalData.songState?'running':'paused',
+      songId: app.globalData.songId,
+      width:app.globalData.songId.length>0?'90%':'100%'
+    })
   },
 
   /**
