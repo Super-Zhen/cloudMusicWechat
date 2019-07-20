@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/player/player",
     "pages/login/login",
     "pages/me/me",
-    "pages/recommend/recommend"
+    "pages/recommend/recommend",
+    "pages/catlist/catlist"
   ],
   "window": {
     "backgroundTextStyle": "light",

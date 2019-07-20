@@ -57,7 +57,7 @@
     </view><!--主体-->
     <view class="nav">
         <text bindtap='torecommend'>日推</text>
-        <text>歌单</text>
+        <text bindtap="toCatlist">歌单</text>
         <text>Top榜</text>
         <text>电台</text>
         <text>直播</text>

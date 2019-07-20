@@ -104,6 +104,12 @@ Page({
   //     }
   //   })
   },
+  // 去歌单
+  toCatlist(){
+    wx.navigateTo({
+      url: '../catlist/catlist'
+    })
+  },
   torecommend(){
     wx.navigateTo({
       url: '../recommend/recommend',
