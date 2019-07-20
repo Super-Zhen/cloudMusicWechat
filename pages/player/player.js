@@ -128,9 +128,6 @@ Page({
     //
     // }),
     // 监听音乐播放完毕之后
-    BackgroundAudioManager.onEnded(res => {
-
-    })
   },
   playOrPause(){
     if(this.data.active){
