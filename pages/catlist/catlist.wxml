@@ -1,0 +1,36 @@
+<view >
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <block wx:for="{{catTitleList}}" wx:for-index="bindex" wx:key="">
+            <view class="tab-item {{currentTab==bindex?'active':''}}"  data-current="{{bindex}}" bindtap="swichNav">{{item}}</view>
+        </block>
+<!--        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">推荐</view>-->
+<!--        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">精品</view>-->
+<!--        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">华语</view>-->
+<!--        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">流行</view>-->
+<!--        <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">纠纷</view>-->
+<!--        <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">青葱</view>-->
+<!--        <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">全部</view>-->
+<!--        <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">其他</view>-->
+    </scroll-view>
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+            style="height:{{winHeight}}rpx">
+        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}" wx:key="{{item}}">
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <block wx:for="{{expertList}}" wx:key="*this">
+                    <view class="item-ans">
+                        <view class="avatar">
+                            <image class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537520335665&di=533d913bd1587331b62b0c3f381adec5&imgtype=0&src=http%3A%2F%2Fpic31.nipic.com%2F20130731%2F7331048_094333540110_2.png"></image>
+                        </view>
+                        <view class="expertInfo">
+                            <view class="name">{{expertList[index].name}}</view>
+                            <view class="tag">{{expertList[index].tag}}</view>
+                            <view class="answerHistory">{{expertList[index].answer}}个回答，{{expertList[index].listen}}人听过 </view>
+                        </view>
+                        <!--   data-index='{{index}}'用于js获取点击的第几项 index -->
+                        <button bindtap='info' data-index='{{index}}' class="askBtn">信息</button>
+                    </view>
+                </block>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>
