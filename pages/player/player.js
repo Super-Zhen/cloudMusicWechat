@@ -58,40 +58,42 @@ Page({
    * 播放歌曲
    */
   playSong(id) {
+    let songName=''
     const InnerAudioContext = wx.createInnerAudioContext()
     this.setData({
       InnerAudioContext: InnerAudioContext,
       bgColor:'gray'
-    })
-    API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
-      if(res.code === 200 && res.data[0].url) {
-        this.createAudioManager(res.data[0].url)
-        if(!this.data.active){
-          this.data.BackgroundAudioManager.pause()
-        }
-      }else{
-        wx.showModal({
-          title: '',
-          content: '',
-        })
-      }
     })
     API.getSongDetail({ids:id}).then(res=> {
       if(res.code === 200){
         wx.setNavigationBarTitle({
           title: res.songs[0].name
         })
+        songName = res.songs[0].name
         let alia = res.songs[0].alia[0]?'('+res.songs[0].alia[0]+')':''
         let songTitle = `${res.songs[0].name}  ${alia}`
         this.setData({
           songsDetail: res.songs[0],
           animationData:[songTitle,songTitle,songTitle]
         })
+        API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
+          if(res.code === 200 && res.data[0].url) {
+            this.createAudioManager(res.data[0].url,songName)
+            if(!this.data.active){
+              this.data.BackgroundAudioManager.pause()
+            }
+          }else{
+            wx.showModal({
+              title: '',
+              content: '',
+            })
+          }
+        })
       }
     })
     API.getSongLyric({id:id}).then(res=>{
       console.log(res)
-      if(res.code==200){
+      if(res.code===200){
         this.setData({
           lyric: res.lyric.replace(/\[[0-9]{2}:[0-9]{2}\.[0-9]{3}\]/g,'')
         })
@@ -107,19 +109,20 @@ Page({
    * 创建播放进程
    * @param url
    */
-  createAudioManager(url){
+  createAudioManager(url,title){
+    let that = this
     const BackgroundAudioManager = wx.getBackgroundAudioManager()
     this.setData({
       BackgroundAudioManager:BackgroundAudioManager
     })
-    BackgroundAudioManager.title = 'title'
+    BackgroundAudioManager.title = title
     BackgroundAudioManager.src = url
     this.data.BackgroundAudioManager.onTimeUpdate(()=>{
      // console.log(this.data.BackgroundAudioManager.currentTime)
 
     })
-    this.data.BackgroundAudioManager.onEnded(()=>{
-      console.log(1111)
+    BackgroundAudioManager.onEnded(()=>{
+      this.onSongEnd()
     })
     // 这儿是否设置自动播放
     // BackgroundAudioManager.play()
@@ -147,16 +150,9 @@ Page({
       this.data.BackgroundAudioManager.onTimeUpdate(()=>{
         //console.log(this.data.BackgroundAudioManager.currentTime)
       })
+
       this.data.BackgroundAudioManager.onEnded(()=>{
-        if(this.data.BackgroundAudioManager.currentTime === 0){
-          if(this.data.repeatType = 'repeatOne'){
-            this.playSong(app.globalData.songId)
-          }else if(this.data.repeatType = 'repeat'){
-            this.toNextSong()
-          }else {
-            this.playSong(app.globalData.playList[Math.floor((Math.random()*app.globalData.playList.length))])
-          }
-        }
+        this.onSongEnd()
       })
       this.setData({
         active:true,
@@ -188,6 +184,21 @@ Page({
     this.setData({
       bgColor:''
     })
+  },
+/**
+ * 判断歌曲是否播放完毕然后判断是单曲还是列表循环
+ */
+  onSongEnd(){
+    debugger
+    if(this.data.BackgroundAudioManager.currentTime === 0){
+      if(this.data.repeatType === 'repeatOne'){
+        this.playSong(app.globalData.songId)
+      }else if(this.data.repeatType === 'repeat'){
+        this.toNextSong()
+      }else {
+        this.playSong(app.globalData.playList[Math.floor((Math.random()*app.globalData.playList.length))])
+      }
+    }
   },
   /**
    * 传入当前的循环类型
