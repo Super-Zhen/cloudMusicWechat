@@ -57,8 +57,11 @@ module.exports = {
   loginState(){
     return requestData('/login/status')
   },
-  getRecommend(){
+  getRecommend(){ // 获取推荐歌曲
     return requestData('/recommend/songs')
+  },
+  getTopPlaylist(data){ // 获取网友精选碟
+    return requestData('/top/playlist',data)
   },
   toplayer(e){
     let id = e.currentTarget.dataset.id

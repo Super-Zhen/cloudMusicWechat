@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7d6e2724-445e-412f-932c-2f3ad9e8bb12" name="Default" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiData/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/apiData/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/app.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/catlist/catlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/catlist/catlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/catlist/catlist.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/catlist/catlist.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/catlist/catlist.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/catlist/catlist.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/player/player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="145" column="22" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
+            <state relative-caret-position="329">
+              <caret line="236" column="1" lean-forward="true" selection-start-line="236" selection-start-column="1" selection-end-line="238" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -27,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="106" column="57" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="57" />
+            <state relative-caret-position="2074">
+              <caret line="87" column="21" lean-forward="true" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#view#0;n#view#0;n#!!top" expanded="true" />
@@ -40,10 +46,32 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="679">
+              <caret line="88" column="3" lean-forward="true" selection-start-line="68" selection-start-column="2" selection-end-line="88" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="13" column="81" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="81" />
+              <folding>
+                <element signature="n#style#0;n#swiper#0;n#view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#swiper-item#0;n#swiper#0;n#view#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="109" column="30" selection-start-line="109" selection-start-column="30" selection-end-line="109" selection-end-column="30" />
+            <state relative-caret-position="-1655">
+              <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -53,25 +81,14 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#swiper#0;n#view#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="529" column="16" selection-start-line="529" selection-start-column="12" selection-end-line="529" selection-end-column="16" />
+            <state relative-caret-position="664">
+              <caret line="555" column="32" selection-start-line="555" selection-start-column="32" selection-end-line="555" selection-end-column="32" />
               <folding>
-                <element signature="e#141#1106#0" />
+                <element signature="e#198#1172#0" />
+                <element signature="e#1281#12318#0" />
               </folding>
             </state>
           </provider>
@@ -80,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+            <state relative-caret-position="672">
+              <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -89,17 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apiData/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="641">
+              <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -107,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.wxss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+            <state relative-caret-position="384">
+              <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -124,12 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>240px</find>
-      <find>slide-image</find>
-      <find>indicatorDots</find>
-      <find>getNewSong</find>
-      <find>tuijianTitle</find>
-      <find>animationData</find>
       <find>isPlay</find>
       <find>active</find>
       <find>play</find>
@@ -151,8 +153,15 @@
       <find>songState</find>
       <find>BackgroundAudioManager.pause</find>
       <find>this.data.BackgroundAudioManager.pause</find>
-      <find>scrollLeft</find>
       <find>winHeight</find>
+      <find>expertList</find>
+      <find>checkCor</find>
+      <find>$$</find>
+      <find>scrollLeft</find>
+      <find>swichNav</find>
+      <find>swich</find>
+      <find>currentTab</find>
+      <find>switchTab</find>
     </findStrings>
     <replaceStrings>
       <replace>active</replace>
@@ -173,20 +182,20 @@
         <option value="$PROJECT_DIR$/pages/logs/logs.js" />
         <option value="$PROJECT_DIR$/pages/player/player.wxss" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/pages/index/index.wxss" />
         <option value="$PROJECT_DIR$/pages/player/player.wxml" />
         <option value="$PROJECT_DIR$/pages/recommend/recommend.wxss" />
         <option value="$PROJECT_DIR$/pages/recommend/recommend.wxml" />
-        <option value="$PROJECT_DIR$/app.wxss" />
         <option value="$PROJECT_DIR$/pages/recommend/recommend.js" />
         <option value="$PROJECT_DIR$/pages/player/player.js" />
-        <option value="$PROJECT_DIR$/apiData/api.js" />
         <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/pages/index/index.wxml" />
         <option value="$PROJECT_DIR$/pages/index/index.js" />
+        <option value="$PROJECT_DIR$/pages/index/index.wxss" />
+        <option value="$PROJECT_DIR$/app.wxss" />
+        <option value="$PROJECT_DIR$/apiData/api.js" />
         <option value="$PROJECT_DIR$/pages/catlist/catlist.wxss" />
-        <option value="$PROJECT_DIR$/pages/catlist/catlist.js" />
         <option value="$PROJECT_DIR$/pages/catlist/catlist.wxml" />
+        <option value="$PROJECT_DIR$/pages/catlist/catlist.js" />
       </list>
     </option>
   </component>
@@ -202,7 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -259,13 +267,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="app&#9;FILE&#9;file://F:/severHtml/cloudMusicWechat/app.wxss" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NeteaseCloudMusicApi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -305,7 +314,8 @@
       <workItem from="1563602306179" duration="4210000" />
       <workItem from="1563606774862" duration="6022000" />
       <workItem from="1563613643016" duration="8916000" />
-      <workItem from="1563634495722" duration="4719000" />
+      <workItem from="1563634495722" duration="4830000" />
+      <workItem from="1563676217557" duration="9112000" />
     </task>
     <task id="LOCAL-00001" summary="添加付费歌曲判断&#10;添加音乐后台播放代码&#10;修改播放页面样式">
       <created>1562586734945</created>
@@ -356,14 +366,22 @@
       <option name="project" value="LOCAL" />
       <updated>1563639965953</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1">
+      <created>1563640050437</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1563640050437</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126469000" />
+    <option name="totallyTimeSpent" value="135692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988662" visible="true" weight="0.16596195" />
       <window_info id="Structure" order="1" sideWeight="0.5011338" side_tool="true" weight="0.16596195" />
@@ -434,10 +452,10 @@
     <MESSAGE value="播放歌曲的时候 在图片没有加载出来的时候，先设置背景&#10;添加下一曲方法" />
     <MESSAGE value="播放歌曲的时候 在图片没有加载出来的时候，先设置背景&#10;添加下一曲方法&#10;添加单曲循环，播放列表，随机播放，列表循环图片" />
     <MESSAGE value="更改git账号" />
-    <MESSAGE value="1" />
     <MESSAGE value="页面中添加全局的音乐按钮" />
     <MESSAGE value="添加歌单列表，删除log日志文件夹" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加歌单列表，删除log日志文件夹" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/images/music.png">
@@ -508,9 +526,7 @@
     <entry file="file://$PROJECT_DIR$/images/needle.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/logs/logs.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/logs/logs.json" />
     <entry file="file://$PROJECT_DIR$/pages/login/login.wxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -594,47 +610,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" selection-start-line="5" selection-end-line="29" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/player/player.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="145" column="22" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/logs/logs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/logs/logs.wxml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apiData/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/disc.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/logs/logs.js" />
+    <entry file="file://$PROJECT_DIR$/pages/logs/logs.wxml" />
+    <entry file="file://$PROJECT_DIR$/images/disc.png" />
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -642,27 +620,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="109" column="30" selection-start-line="109" selection-start-column="30" selection-end-line="109" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="88" column="3" lean-forward="true" selection-start-line="68" selection-start-column="2" selection-end-line="88" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apiData/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        <state relative-caret-position="672">
+          <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="106" column="57" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="57" />
+        <state relative-caret-position="2074">
+          <caret line="87" column="21" lean-forward="true" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#view#0;n#view#0;n#!!top" expanded="true" />
@@ -672,22 +664,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1655">
+          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/player/player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="236" column="1" lean-forward="true" selection-start-line="236" selection-start-column="1" selection-end-line="238" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="364">
+          <caret line="13" column="81" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="81" />
           <folding>
             <element signature="n#style#0;n#swiper#0;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#swiper-item#0;n#swiper#0;n#view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="529" column="16" selection-start-line="529" selection-start-column="12" selection-end-line="529" selection-end-column="16" />
+        <state relative-caret-position="664">
+          <caret line="555" column="32" selection-start-line="555" selection-start-column="32" selection-end-line="555" selection-end-column="32" />
           <folding>
-            <element signature="e#141#1106#0" />
+            <element signature="e#198#1172#0" />
+            <element signature="e#1281#12318#0" />
           </folding>
         </state>
       </provider>

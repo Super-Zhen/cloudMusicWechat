@@ -1,10 +1,11 @@
-var app = getApp();
+const API = require('../../apiData/api')
+const app = getApp();
 Page({
   data: {
     winHeight: "", //窗口高度
     currentTab: 0, //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
-    catTitleList:['推荐','精品','华语','流行','轻音乐','ACG','民谣'],
+    catTitleList:['推荐','精品','华语','流行','轻音乐','ACG','民谣','123','123123','民谣','123','123123'],
     expertList: [
         { //假数据
       img: "avatar.png",
@@ -55,17 +56,20 @@ Page({
         answer: 134,
         listen: 2234
       },
-    ]
+    ],
+    Playlist:[]
   },
   // 滚动切换标签样式
   switchTab: function(e) {
     console.log(e.detail)
+    this.checkCor();
 //e.detail.current现在是在哪一个选项卡里面 
     switch (e.detail.current) {
       case 0:
         this.setData({
           currentTab: e.detail.current,
-          expertList: [{ //假数据
+          expertList: [
+              { //假数据
             img: "avatar.png",
             name: "健康1",
             tag: "过去过不去都会过去",
@@ -495,12 +499,12 @@ Page({
           ]
         }); break;
     }
-    this.checkCor();
+
   },
   // 点击标题切换当前页时改变样式
   swichNav: function(e) {
     var cur = e.target.dataset.current;
-    if (this.data.currentTaB == cur) {
+    if (this.data.currentTab === cur) {
       return false;
     } else {
       this.setData({
@@ -510,9 +514,10 @@ Page({
   },
   //判断当前滚动超过一屏时，设置tab标题滚动条。
   checkCor: function() {
-    if (this.data.currentTab > 4) {
+    let that = this
+    if (this.data.currentTab > 3) {
       this.setData({
-        scrollLeft: 300
+        scrollLeft: (that.data.currentTab-3)*85
       })
     } else {
       this.setData({
@@ -521,6 +526,9 @@ Page({
     }
   },
   onLoad: function() {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this;
     //  高度自适应
     wx.getSystemInfo({
@@ -535,11 +543,32 @@ Page({
         });
       }
     });
+    this.getTopPlaylist()
+  },
+  onReady: function () {
+
+  },
+  imageLoad(){
+    wx.hideLoading()
+  },
+  getTopPlaylist(){
+    let that = this
+    API.getTopPlaylist({limit:12,offset:0}).then(res=>{
+      console.log(res)
+      if(res.code === 200) {
+        that.setData({
+          Playlist: res.playlists
+        })
+      }
+    })
+  },
+  lower(){
+    console.log(1111)
   },
   info(e){
     var that = this
     //数据的获取、获取点击了哪个“信息”按钮 输出所对应的name
     console.log(that.data.expertList[e.currentTarget.dataset.index].name)
   },
-  footerTap: app.footerTap
+  // footerTap: app.footerTap
 })

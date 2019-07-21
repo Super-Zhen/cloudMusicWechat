@@ -50,3 +50,23 @@
     transform: rotate(360deg)
   }
 }
+.hotList{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+.hotDetail{
+  width: 220rpx;
+  height: 300rpx;
+  overflow: hidden;
+}
+.hotDetail image{
+  width: 220rpx;
+  height: 220rpx;
+  vertical-align: top;
+  border-radius: 10rpx;
+}
+.hotDetail view{
+  font-size: 20rpx;
+  line-height: 30rpx;
+}

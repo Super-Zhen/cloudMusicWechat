@@ -11,8 +11,8 @@
     top: 0;
     left: 0;
     z-index: 99;
-}
 
+}
 .tab-item {
     margin: 0 36rpx;
     display: inline-block;
@@ -92,11 +92,13 @@
 }
 
 .tab-content {
-    margin-top: 80rpx;
+    margin-top: 90rpx;
+    padding: 0 10rpx;
 }
 
 .scoll-h {
     height: 100%;
+
 }
 /* 
 .swiper {
