@@ -1,5 +1,5 @@
 //app.js
-const BASEURL = 'http://localhost:3000'
+const BASEURL = 'http://192.168.1.11:3000'
 // const BASEURL = 'http://172.20.10.2:3000'
 const requestData = (url , data ) => {
   let httpUrl = BASEURL + url
@@ -63,6 +63,7 @@ module.exports = {
   getTopPlaylist(data){ // 获取网友精选碟
     return requestData('/top/playlist',data)
   },
+
   toplayer(e){
     let id = e.currentTarget.dataset.id
     console.log(id)

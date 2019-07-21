@@ -6,7 +6,7 @@
     </scroll-view>
     <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
             style="height:{{winHeight}}rpx">
-        <swiper-item wx:for="{{catTitleList}}" wx:key="{{item}}" style="padding:0 10rpx">
+        <swiper-item wx:for="{{catTitleList}}" wx:key="{{item}}">
             <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower='lower'>
                 <view class="hotList">
                     <block wx:for="{{Playlist}}" wx:key="*this">
