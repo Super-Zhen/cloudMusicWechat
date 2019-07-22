@@ -93,7 +93,7 @@ Page({
       console.log(res)
       if(res.code===200){
         this.setData({
-          lyric: res.lyric.replace(/\[[0-9]{2}:[0-9]{2}\.[0-9]{3}\]/g,'')
+          lyric: res.lyric.replace(/\[[0-9]{2}:[0-9]{2}\.[0-9]{1,3}\]/g,'')
         })
       }
     })

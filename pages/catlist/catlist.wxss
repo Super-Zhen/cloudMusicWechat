@@ -93,7 +93,7 @@
 
 .tab-content {
     margin-top: 90rpx;
-    padding: 0 10rpx;
+    /*padding: 0 10rpx;*/
 }
 
 .scoll-h {
