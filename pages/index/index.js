@@ -82,27 +82,6 @@ Page({
   },
   toplayer(e){
     API.toplayer(e)
-  //   let that = this
-  //   let id = e.currentTarget.dataset.id
-  //   console.log(id)
-  //   API.getSongUrl({id:id}).then(res => { // 主要是获取歌曲地址
-  //     if(res.code === 200 && res.data[0].url) {
-  //       app.globalData.playList = that.data.NewSong.map((item)=>{
-  //         return String(item.id)
-  //       })
-  //       wx.navigateTo({
-  //         url: `../player/player?id=${id}`,
-  //       })
-  //     }else if(res.data[0].fee=== 4){ // 判断歌曲是否是付费歌曲4 ，或者试听其中一段歌曲1，一般标准歌曲8
-  //       wx.showToast({
-  //         title: '数字专辑,需要单独付费',
-  //         icon: 'none',
-  //         duration: 2000
-  //       })
-  //     }else{
-  //       console.log('index 94行 出错了')
-  //     }
-  //   })
   },
   // 去歌单
   toCatlist(){
@@ -121,7 +100,15 @@ Page({
     this.getNewAlbum()
     this.getNewSong()
     wx.setStorageSync('repeatType','repeat')
-
+    app.setWatch(this.data,this.watch)
+    this.setData({
+      interval:4999
+    })
+  },
+  watch:{
+    interval:function (val) {
+      console.log(val)
+    }
   },
   onShow: function () {
     this.setData({
