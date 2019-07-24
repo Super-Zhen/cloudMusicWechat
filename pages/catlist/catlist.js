@@ -3,16 +3,16 @@ const app = getApp();
 Page({
   data: {
     winHeight: "", //窗口高度
-    currentTab: 0, //预设当前项的值
+    currentTab: 'tuiJian', //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
     catTitleList:{
-      '推荐':[],
-      '精品':[],
-      '华语':[],
-      '流行':[],
-      '轻音乐':[],
-      'ACG':[],
-      '民谣':[]
+      'tuiJian':[1],
+      'jingPin':[1],
+      'huaYu':[1],
+      'liuXing':[1],
+      'qingYinyue':[1],
+      'ACG':[1],
+      'minYao':[1]
       },
     Playlist:[],
     highQuality:[],
