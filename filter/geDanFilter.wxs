@@ -1,0 +1,34 @@
+var geDanFilter = function (param) {
+    console.log(param)
+    var detail = ''
+    switch (param) {
+        case 'tuiJian':
+            detail = '推荐'
+        break
+        case 'jingPin':
+            detail = '精品'
+        break
+        case 'huaYu':
+            detail = '华语'
+        break
+        case 'liuXing':
+            detail = '流行'
+        break
+        case 'qingYinyue':
+            detail = '轻音乐'
+        break
+        case 'ACG':
+            detail = 'ACG'
+        break
+        case 'minYao':
+            detail = '民谣'
+        break
+    }
+
+
+    return detail
+}
+
+module.exports = {
+    geDanFilter: geDanFilter,
+};
