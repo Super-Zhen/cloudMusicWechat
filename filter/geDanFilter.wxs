@@ -1,5 +1,4 @@
 var geDanFilter = function (param) {
-    console.log(param)
     var detail = ''
     switch (param) {
         case 'tuiJian':
@@ -24,8 +23,6 @@ var geDanFilter = function (param) {
             detail = '民谣'
         break
     }
-
-
     return detail
 }
 

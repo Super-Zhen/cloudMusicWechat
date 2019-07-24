@@ -1,11 +1,7 @@
 <view >
-    <!--
-
-  <view>日期：{{geDanFilter.formatDate('1563969650141')}}</view>
-    -->
     <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
         <block wx:for="{{catTitleList}}" wx:for-index="bindex" wx:for-item="value" wx:key="">
-            <wxs src='../../filter/geDanFilter.wxs' module='geDanFilter' />
+            <wxs src='../../filter/geDanFilter.wxs' module='geDanFilter'></wxs>
             <view class="tab-item {{currentTab==bindex?'active':''}}"  data-current="{{bindex}}" bindtap="swichNav">{{geDanFilter.geDanFilter(bindex)}}</view>
         </block>
     </scroll-view>

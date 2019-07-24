@@ -3,7 +3,7 @@ const app = getApp();
 Page({
   data: {
     winHeight: "", //窗口高度
-    currentTab: 'tuiJian', //预设当前项的值
+    currentTab: '', //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
     catTitleList:{
       'tuiJian':[1],
@@ -20,6 +20,7 @@ Page({
   },
   // 滚动切换标签样式
   switchTab: function(e) {
+    debugger
     let that = this
     console.log(e.detail)
     this.checkCor();
@@ -66,17 +67,24 @@ Page({
   },
   // 点击标题切换当前页时改变样式
   swichNav: function(e) {
+    debugger
+    var that = this
     var cur = e.target.dataset.current;
+    var array =[]
+    for(item in that.data.catTitleList){
+      array.push(item)
+    }
     if (this.data.currentTab === cur) {
       return false;
     } else {
-      this.setData({
-        currentTab: cur
+      that.setData({
+        currentTab: array.indexOf(cur)
       })
     }
   },
   //判断当前滚动超过一屏时，设置tab标题滚动条。
   checkCor: function() {
+    debugger
     let that = this
     if (this.data.currentTab > 3) {
       this.setData({
@@ -100,7 +108,8 @@ Page({
         var calc = clientHeight * rpxR - 100;
         console.log(calc)
         that.setData({
-          winHeight: calc
+          winHeight: calc,
+          currentTab:'tuiJian'
         });
       }
     });
