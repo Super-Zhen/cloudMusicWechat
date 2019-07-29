@@ -2,7 +2,7 @@
     <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
         <block wx:for="{{catTitleList}}" wx:for-index="bindex" wx:for-item="value" wx:key="">
             <wxs src='../../filter/geDanFilter.wxs' module='geDanFilter'></wxs>
-            <view class="tab-item {{(currentTab)==(bindex)?'active':''}}"  data-current="{{bindex}}" bindtap="swichNav">{{geDanFilter.geDanFilter(bindex)}}</view>
+            <view class="tab-item {{(currentTab)==(bindex)?'active':''}}" data-title="{{geDanFilter.geDanFilter(bindex)}}"  data-current="{{bindex}}" bindtap="swichNav">{{geDanFilter.geDanFilter(bindex)}}</view>
         </block>
     </scroll-view>
     <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"

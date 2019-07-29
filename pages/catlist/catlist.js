@@ -22,22 +22,26 @@ Page({
         this.setData({
           currentTab: e.detail.current
         });
-        that.getTopPlaylist(24,0,1)
+        that.getTopPlaylist(24,0,0)
       break;
       case 1:
         this.setData({
           currentTab: e.detail.current
         });
-        that.getTopPlaylistHigh(24,0,1)
+        that.getTopPlaylistHigh( {offset:0},1)
         break;
       case 2:
         this.setData({
           currentTab: e.detail.current,
-        }); break;
+        });
+        that.getTopPlaylistHigh( {offset:0,cat:'华语'},2)
+        break;
       case 3:
         this.setData({
           currentTab: e.detail.current,
-        }); break;
+        });
+        that.getTopPlaylistHigh( {offset:0,cat:'流行'},3)
+        break;
       case 4:
         this.setData({
           currentTab: e.detail.current,
@@ -126,24 +130,22 @@ Page({
     API.getTopPlaylist({limit:limitNum,offset:offset}).then(res=>{
       console.log(res)
       if(res.code === 200) {
-        // console.log(res.playlists)
-        // debugger
         that.data.catTitleList[index].push.apply(that.data.catTitleList[index],res.playlists)
-        // console.log(playlist)
         that.setData({
           catTitleList: that.data.catTitleList,
-          // Playlist: playlist
         })
       }
     })
   },
-  getTopPlaylistHigh(limitNum,offset,index){
+  getTopPlaylistHigh(data,...arg){
     let that = this
-    API.getTopPlaylistHigh({limit:limitNum,offset:offset,before:that.data.date}).then(res=>{
+    // {limit:arg[0],offset:arg[1],before:that.data.date}
+    data.before=that.data.date
+    data.limit=24
+    API.getTopPlaylistHigh(data).then(res=>{
       console.log(res)
       if(res.code === 200){
-        // let highQuality = that.data.catTitleList[index].concat(res.playlists)
-        that.data.catTitleList[index].push.apply(that.data.catTitleList[index],res.playlists)
+        that.data.catTitleList[arg[0]].push.apply(that.data.catTitleList[arg[0]],res.playlists)
         that.setData({
           catTitleList:that.data.catTitleList
         })
@@ -157,7 +159,14 @@ Page({
         this.getTopPlaylist(24,this.data.catTitleList[this.data.currentTab].length,this.data.currentTab)
         break
       case 1:
-        this.getTopPlaylistHigh(24,this.data.catTitleList[this.data.currentTab].length,this.data.currentTab)
+        // this.getTopPlaylistHigh([24,this.data.catTitleList[this.data.currentTab].length,this.data.currentTab])
+        this.getTopPlaylistHigh({offset:this.data.catTitleList[this.data.currentTab].length},[this.data.currentTab])
+        break
+      case 2:
+        this.getTopPlaylistHigh({offset:this.data.catTitleList[this.data.currentTab].length,cat:'华语'},[this.data.currentTab])
+        break
+      case 3:
+        this.getTopPlaylistHigh({offset:this.data.catTitleList[this.data.currentTab].length,cat:'流行'},[this.data.currentTab])
         break
     }
 
