@@ -13,7 +13,7 @@
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.4",
+	"libVersion": "2.7.7",
 	"appid": "wx9b960b2ccc97a5c3",
 	"projectname": "cloudMusicWechat",
 	"debugOptions": {

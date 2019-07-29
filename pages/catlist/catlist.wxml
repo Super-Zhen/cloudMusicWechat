@@ -2,7 +2,7 @@
     <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
         <block wx:for="{{catTitleList}}" wx:for-index="bindex" wx:for-item="value" wx:key="">
             <wxs src='../../filter/geDanFilter.wxs' module='geDanFilter'></wxs>
-            <view class="tab-item {{currentTab==bindex?'active':''}}"  data-current="{{bindex}}" bindtap="swichNav">{{geDanFilter.geDanFilter(bindex)}}</view>
+            <view class="tab-item {{(currentTab)==(bindex)?'active':''}}"  data-current="{{bindex}}" bindtap="swichNav">{{geDanFilter.geDanFilter(bindex)}}</view>
         </block>
     </scroll-view>
     <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
@@ -10,7 +10,7 @@
         <swiper-item wx:for="{{catTitleList}}" wx:key="{{item}}" >
             <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower='lower'>
                 <view class="hotList" style="padding: 0 10rpx;">
-                    <block wx:for="{{Playlist}}" wx:key="*this">
+                    <block wx:for="{{item}}" wx:key="*this">
                         <view class="hotDetail">
                             <image src="{{item.coverImgUrl}}" bindload="imageLoad"/>
                             <view>

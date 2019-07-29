@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d6e2724-445e-412f-932c-2f3ad9e8bb12" name="Default" comment="">
+    <list default="true" id="7d6e2724-445e-412f-932c-2f3ad9e8bb12" name="Default" comment="修改过滤器">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiData/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/apiData/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter/geDanFilter.wxs" beforeDir="false" afterPath="$PROJECT_DIR$/filter/geDanFilter.wxs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/catlist/catlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/catlist/catlist.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/catlist/catlist.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/catlist/catlist.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +23,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="1876">
               <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
             </state>
           </provider>
@@ -46,17 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/filter/geDanFilter.wxs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="224">
+              <caret line="102" column="38" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -64,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="776">
+            <state relative-caret-position="2100">
               <caret line="75" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
@@ -73,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apiData/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1624">
-              <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+            <state relative-caret-position="126">
+              <caret line="62" column="16" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -91,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="5" column="72" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="72" />
+            <state relative-caret-position="268">
+              <caret line="10" column="81" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="81" />
               <folding>
                 <element signature="n#style#0;n#swiper#0;n#view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#view#0;n#scroll-view#0;n#swiper-item#0;n#swiper#0;n#view#0;n#!!top" expanded="true" />
@@ -102,10 +95,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/filter/geDanFilter.wxs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="80" column="32" lean-forward="true" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+            <state relative-caret-position="194">
+              <caret line="158" column="11" lean-forward="true" selection-start-line="158" selection-start-column="11" selection-end-line="158" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -133,8 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>active</find>
-      <find>play</find>
       <find>content</find>
       <find>playOrPause</find>
       <find>HotgeDan</find>
@@ -157,12 +157,14 @@
       <find>expertList</find>
       <find>checkCor</find>
       <find>$$</find>
-      <find>swichNav</find>
       <find>swich</find>
-      <find>getTopPlaylist</find>
-      <find>switchTab</find>
-      <find>currentTab</find>
       <find>scrollLeft</find>
+      <find>swichNav</find>
+      <find>currentTab</find>
+      <find>switchTab</find>
+      <find>192.168.1.11</find>
+      <find>getTopPlaylist</find>
+      <find>getTopPlaylistHigh</find>
     </findStrings>
     <replaceStrings>
       <replace>active</replace>
@@ -188,7 +190,6 @@
         <option value="$PROJECT_DIR$/pages/recommend/recommend.js" />
         <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/app.wxss" />
-        <option value="$PROJECT_DIR$/apiData/api.js" />
         <option value="$PROJECT_DIR$/pages/catlist/catlist.json" />
         <option value="$PROJECT_DIR$/pages/catlist/catlist.wxss" />
         <option value="$PROJECT_DIR$/pages/player/player.js" />
@@ -197,18 +198,18 @@
         <option value="$PROJECT_DIR$/pages/index/index.js" />
         <option value="$PROJECT_DIR$/filter/geDanFilter.js" />
         <option value="$PROJECT_DIR$/pages/index/index.wxss" />
-        <option value="$PROJECT_DIR$/pages/catlist/catlist.js" />
         <option value="$PROJECT_DIR$/pages/index/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/catlist/catlist.wxml" />
+        <option value="$PROJECT_DIR$/apiData/api.js" />
         <option value="$PROJECT_DIR$/filter/geDanFilter.wxs" />
+        <option value="$PROJECT_DIR$/pages/catlist/catlist.wxml" />
+        <option value="$PROJECT_DIR$/pages/catlist/catlist.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="58" />
-    <option name="y" value="30" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -328,7 +329,8 @@
       <workItem from="1563719339655" duration="3011000" />
       <workItem from="1563797276215" duration="7493000" />
       <workItem from="1563884381901" duration="3101000" />
-      <workItem from="1563968467790" duration="4810000" />
+      <workItem from="1563968467790" duration="7304000" />
+      <workItem from="1564398790667" duration="8975000" />
     </task>
     <task id="LOCAL-00001" summary="添加付费歌曲判断&#10;添加音乐后台播放代码&#10;修改播放页面样式">
       <created>1562586734945</created>
@@ -407,20 +409,39 @@
       <option name="project" value="LOCAL" />
       <updated>1563894115068</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="添加数据过滤器">
+      <created>1563982348928</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1563982348928</updated>
+    </task>
+    <task id="LOCAL-00013" summary="添加数据过滤器">
+      <created>1563982377520</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1563982377520</updated>
+    </task>
+    <task id="LOCAL-00014" summary="修改过滤器">
+      <created>1563984765577</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1563984765577</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154256000" />
+    <option name="totallyTimeSpent" value="165725000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="30" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988662" visible="true" weight="0.16596195" />
       <window_info id="Structure" order="1" sideWeight="0.5011338" side_tool="true" weight="0.16596195" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719395" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -430,8 +451,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32960895" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.5072626" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Version Control" order="10" visible="true" weight="0.31731844" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -493,7 +515,9 @@
     <MESSAGE value="添加歌单推荐，修改样式" />
     <MESSAGE value="添加精品歌单，修改歌词过滤" />
     <MESSAGE value="添加数据监听" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加数据监听" />
+    <MESSAGE value="添加数据过滤器" />
+    <MESSAGE value="修改过滤器" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改过滤器" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/images/music.png">
@@ -648,13 +672,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/new 3.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/new 3.json" />
     <entry file="file://$PROJECT_DIR$/pages/player/player.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2660">
@@ -669,10 +687,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apiData/api.js">
+    <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1624">
-          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+        <state relative-caret-position="1876">
+          <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#view#0;n#!!top" />
+            <element signature="n#style#0;n#view#0;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#0;n#view#0;n#view#0;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#image#0;n#view#1;n#view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
@@ -693,55 +732,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/filter/geDanFilter.wxs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/filter/geDanFilter.wxs">
+    <entry file="file://$PROJECT_DIR$/apiData/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="126">
+          <caret line="62" column="16" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#view#0;n#!!top" expanded="true" />
-            <element signature="n#view#0;n#!!top" />
-            <element signature="n#style#0;n#view#0;n#view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#view#0;n#view#0;n#view#0;n#view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#image#0;n#view#1;n#view#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="102" column="38" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="72" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="72" />
+        <state relative-caret-position="268">
+          <caret line="10" column="81" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="81" />
           <folding>
             <element signature="n#style#0;n#swiper#0;n#view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#view#0;n#scroll-view#0;n#swiper-item#0;n#swiper#0;n#view#0;n#!!top" expanded="true" />
@@ -749,17 +757,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.js">
+    <entry file="file://$PROJECT_DIR$/filter/geDanFilter.wxs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="80" column="32" lean-forward="true" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+        <state relative-caret-position="672">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/filter/geDanFilter.wxs">
+    <entry file="file://$PROJECT_DIR$/pages/catlist/catlist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="194">
+          <caret line="158" column="11" lean-forward="true" selection-start-line="158" selection-start-column="11" selection-end-line="158" selection-end-column="11" />
         </state>
       </provider>
     </entry>

@@ -1,25 +1,25 @@
 var geDanFilter = function (param) {
     var detail = ''
     switch (param) {
-        case 'tuiJian':
+        case 0:
             detail = '推荐'
         break
-        case 'jingPin':
+        case 1:
             detail = '精品'
         break
-        case 'huaYu':
+        case 2:
             detail = '华语'
         break
-        case 'liuXing':
+        case 3:
             detail = '流行'
         break
-        case 'qingYinyue':
+        case 4:
             detail = '轻音乐'
         break
-        case 'ACG':
+        case 5:
             detail = 'ACG'
         break
-        case 'minYao':
+        case 6:
             detail = '民谣'
         break
     }

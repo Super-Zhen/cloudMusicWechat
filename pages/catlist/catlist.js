@@ -3,17 +3,9 @@ const app = getApp();
 Page({
   data: {
     winHeight: "", //窗口高度
-    currentTab: '', //预设当前项的值
+    currentTab: 0, //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
-    catTitleList:{
-      'tuiJian':[1],
-      'jingPin':[1],
-      'huaYu':[1],
-      'liuXing':[1],
-      'qingYinyue':[1],
-      'ACG':[1],
-      'minYao':[1]
-      },
+    catTitleList:[[], [], [], [], [], [], []],
     Playlist:[],
     highQuality:[],
     date: new Date().getTime()
@@ -30,13 +22,13 @@ Page({
         this.setData({
           currentTab: e.detail.current
         });
-        that.getTopPlaylist(24,0)
+        that.getTopPlaylist(24,0,1)
       break;
       case 1:
         this.setData({
           currentTab: e.detail.current
         });
-        that.getTopPlaylistHigh(24,0,that.data.date)
+        that.getTopPlaylistHigh(24,0,1)
         break;
       case 2:
         this.setData({
@@ -70,15 +62,15 @@ Page({
     debugger
     var that = this
     var cur = e.target.dataset.current;
-    var array =[]
-    for(item in that.data.catTitleList){
-      array.push(item)
-    }
+    // var array =[]
+    // for(item in that.data.catTitleList){
+    //   array.push(item)
+    // }
     if (this.data.currentTab === cur) {
       return false;
     } else {
       that.setData({
-        currentTab: array.indexOf(cur)
+        currentTab: cur
       })
     }
   },
@@ -109,11 +101,11 @@ Page({
         console.log(calc)
         that.setData({
           winHeight: calc,
-          currentTab:'tuiJian'
+          // currentTab:'1'
         });
       }
     });
-    // this.getTopPlaylist(24,0)
+    this.getTopPlaylist(24,0,0)
   },
   onReady: function () {
 
@@ -126,39 +118,49 @@ Page({
   imageLoad(){
     wx.hideLoading()
   },
-  getTopPlaylist(limitNum,offset){
-    wx.showLoading({
-      title: '加载中',
-    })
+  getTopPlaylist(limitNum,offset,index){
+    // wx.showLoading({
+    //   title: '加载中',
+    // })
     let that = this
     API.getTopPlaylist({limit:limitNum,offset:offset}).then(res=>{
       console.log(res)
       if(res.code === 200) {
         // console.log(res.playlists)
         // debugger
-        let playlist = that.data.Playlist.concat(res.playlists)
-        console.log(playlist)
+        that.data.catTitleList[index].push.apply(that.data.catTitleList[index],res.playlists)
+        // console.log(playlist)
         that.setData({
-          Playlist: playlist
+          catTitleList: that.data.catTitleList,
+          // Playlist: playlist
         })
       }
     })
   },
-  getTopPlaylistHigh(limitNum,offset){
+  getTopPlaylistHigh(limitNum,offset,index){
     let that = this
     API.getTopPlaylistHigh({limit:limitNum,offset:offset,before:that.data.date}).then(res=>{
       console.log(res)
       if(res.code === 200){
-        let highQuality = that.data.highQuality.concat(res.playlists)
+        // let highQuality = that.data.catTitleList[index].concat(res.playlists)
+        that.data.catTitleList[index].push.apply(that.data.catTitleList[index],res.playlists)
         that.setData({
-          highQuality:highQuality
+          catTitleList:that.data.catTitleList
         })
       }
     })
   },
   lower(){
-    console.log(this.data.Playlist.length)
-    this.getTopPlaylist(24,this.data.Playlist.length)
+    // console.log(this.data.Playlist.length)
+    switch(this.data.currentTab){
+      case 0:
+        this.getTopPlaylist(24,this.data.catTitleList[this.data.currentTab].length,this.data.currentTab)
+        break
+      case 1:
+        this.getTopPlaylistHigh(24,this.data.catTitleList[this.data.currentTab].length,this.data.currentTab)
+        break
+    }
+
   },
   info(e){
     var that = this
