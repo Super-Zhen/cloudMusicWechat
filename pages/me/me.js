@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isLogin:'hide',
+    loginInfo:''
   },
 
   /**
@@ -21,12 +22,21 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
     console.log('ready')
     API.loginState().then(res=>{
       if(res.code === 301){
         wx.redirectTo({
           url: '../login/login'
         })
+      }else{
+        this.setData({
+          isLogin:'show',
+          loginInfo:app.globalData.loginInfo
+        })
+        wx.hideLoading()
       }
     })
   },

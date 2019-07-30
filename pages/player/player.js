@@ -135,9 +135,9 @@ Page({
     if(this.data.active){
       wx.getBackgroundAudioManager().pause()
       app.globalData.songState = false
-      this.data.BackgroundAudioManager.onTimeUpdate(()=>{
-       // console.log(this.data.BackgroundAudioManager.currentTime)
-      })
+      // this.data.BackgroundAudioManager.onTimeUpdate(()=>{
+      //  // console.log(this.data.BackgroundAudioManager.currentTime)
+      // })
       this.data.BackgroundAudioManager.onEnded(()=>{
         console.log(1111)
       })
@@ -148,9 +148,9 @@ Page({
     }else{
       this.data.BackgroundAudioManager.play()
       app.globalData.songState = true
-      this.data.BackgroundAudioManager.onTimeUpdate(()=>{
-        //console.log(this.data.BackgroundAudioManager.currentTime)
-      })
+      // this.data.BackgroundAudioManager.onTimeUpdate(()=>{
+      //   //console.log(this.data.BackgroundAudioManager.currentTime)
+      // })
 
       this.data.BackgroundAudioManager.onEnded(()=>{
         this.onSongEnd()

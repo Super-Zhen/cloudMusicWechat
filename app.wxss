@@ -6,6 +6,12 @@
 .left{
   float: left;
 }
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
 .textCenter{
   text-align: center;
 }

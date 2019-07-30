@@ -1,0 +1,24 @@
+.page{
+    width:95%;
+    margin: 0 auto;
+}
+.recommendDetail{
+    display: flex
+}
+.recommendDetail image{
+    width: 120rpx;
+    height:120rpx;
+    border-radius: 10rpx;
+    margin:10rpx;
+}
+.Songtitle{
+    padding: 18rpx 0 0 10rpx
+}
+.name{
+    font-size: 36rpx
+    heiget:66rpx;
+    overflow: hidden;
+}
+.albumName{
+    font-size:28rpx
+}

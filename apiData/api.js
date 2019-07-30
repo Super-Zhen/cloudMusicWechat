@@ -66,6 +66,9 @@ module.exports = {
   getTopPlaylistHigh(data){ // 获取精品歌单
     return requestData('/top/playlist/highquality',data)
   },
+  getCatDetail(data){
+    return requestData('/playlist/detail',data)
+  },
   toplayer(e){
     let id = e.currentTarget.dataset.id
     console.log(id)

@@ -94,6 +94,17 @@ Page({
       url: '../recommend/recommend',
     })
   },
+  toCatList(){
+    wx.navigateTo({
+      url: '../catlist/catlist',
+    })
+  },
+  toCatDetail(e){
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../catlist/catDetail?id='+id
+    })
+  },
   onLoad(){
     this.getBanner()
     this.getHotGedan()

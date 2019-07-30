@@ -38,7 +38,6 @@ Page({
       }
     })
     requestTask.onHeadersReceived(function (data) {
-      debugger
       console.log(data.header.cookie)
       wx.setStorageSync("sessionid", data.header["Set-Cookie"])
     })

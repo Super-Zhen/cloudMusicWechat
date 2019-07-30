@@ -65,12 +65,12 @@
     <view class="tuijian">
       <view class="tuijianTitle">
         <text class="left">推荐歌单</text>
-        <text class="right">歌单广场</text>
+        <text class="right" bindtap="toCatList">歌单广场</text>
       </view>
       <view class="hotList">
         <block wx:for="{{HotgeDan}}" wx:key="{{item.id}}">
           <view class="hotDetail">
-            <image src="{{item.coverImgUrl}}"/>
+            <image src="{{item.coverImgUrl}}" data-id="{{item.id}}" bindtap="toCatDetail"/>
             <view>
               <text>{{item.name}}</text>
             </view>

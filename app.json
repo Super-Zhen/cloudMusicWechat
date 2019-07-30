@@ -5,7 +5,8 @@
     "pages/login/login",
     "pages/me/me",
     "pages/recommend/recommend",
-    "pages/catlist/catlist"
+    "pages/catlist/catlist",
+    "pages/catlist/catDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -12,7 +12,7 @@ Page({
   },
   // 滚动切换标签样式
   switchTab: function(e) {
-    debugger
+    // debugger
     let that = this
     console.log(e.detail)
     this.checkCor();
@@ -45,15 +45,21 @@ Page({
       case 4:
         this.setData({
           currentTab: e.detail.current,
-        }); break;
+        });
+        that.getTopPlaylistHigh( {offset:0,cat:'轻音乐'},4)
+        break;
       case 5:
         this.setData({
           currentTab: e.detail.current,
-        }); break;
+        });
+        that.getTopPlaylistHigh( {offset:0,cat:'ACG'},5)
+        break;
       case 6:
         this.setData({
           currentTab: e.detail.current,
-        }); break;
+        });
+        that.getTopPlaylistHigh( {offset:0,cat:'民谣'},6)
+        break;
       case 7:
         this.setData({
           currentTab: e.detail.current,
@@ -63,7 +69,7 @@ Page({
   },
   // 点击标题切换当前页时改变样式
   swichNav: function(e) {
-    debugger
+    // debugger
     var that = this
     var cur = e.target.dataset.current;
     // var array =[]
@@ -80,7 +86,7 @@ Page({
   },
   //判断当前滚动超过一屏时，设置tab标题滚动条。
   checkCor: function() {
-    debugger
+    // debugger
     let that = this
     if (this.data.currentTab > 3) {
       this.setData({
@@ -123,9 +129,9 @@ Page({
     wx.hideLoading()
   },
   getTopPlaylist(limitNum,offset,index){
-    // wx.showLoading({
-    //   title: '加载中',
-    // })
+    wx.showLoading({
+      title: '加载中',
+    })
     let that = this
     API.getTopPlaylist({limit:limitNum,offset:offset}).then(res=>{
       console.log(res)
@@ -138,10 +144,14 @@ Page({
     })
   },
   getTopPlaylistHigh(data,...arg){
+    wx.showLoading({
+      title: '加载中',
+    })
     let that = this
     // {limit:arg[0],offset:arg[1],before:that.data.date}
     data.before=that.data.date
-    data.limit=24
+    data.limit=100
+    // data.offset=100
     API.getTopPlaylistHigh(data).then(res=>{
       console.log(res)
       if(res.code === 200){
@@ -158,18 +168,24 @@ Page({
       case 0:
         this.getTopPlaylist(24,this.data.catTitleList[this.data.currentTab].length,this.data.currentTab)
         break
-      case 1:
-        // this.getTopPlaylistHigh([24,this.data.catTitleList[this.data.currentTab].length,this.data.currentTab])
-        this.getTopPlaylistHigh({offset:this.data.catTitleList[this.data.currentTab].length},[this.data.currentTab])
-        break
-      case 2:
-        this.getTopPlaylistHigh({offset:this.data.catTitleList[this.data.currentTab].length,cat:'华语'},[this.data.currentTab])
-        break
-      case 3:
-        this.getTopPlaylistHigh({offset:this.data.catTitleList[this.data.currentTab].length,cat:'流行'},[this.data.currentTab])
-        break
+      // case 1:
+      //   // this.getTopPlaylistHigh([24,this.data.catTitleList[this.data.currentTab].length,this.data.currentTab])
+      //   this.getTopPlaylistHigh({offset:this.data.catTitleList[this.data.currentTab].length},[this.data.currentTab])
+      //   break
+      // case 2:
+      //   this.getTopPlaylistHigh({offset:this.data.catTitleList[this.data.currentTab].length,cat:'华语'},[this.data.currentTab])
+      //   break
+      // case 3:
+      //   this.getTopPlaylistHigh({offset:this.data.catTitleList[this.data.currentTab].length,cat:'流行'},[this.data.currentTab])
+      //   break
     }
 
+  },
+  toCatDetail(e){
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: './catDetail?id='+id
+    })
   },
   info(e){
     var that = this

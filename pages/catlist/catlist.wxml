@@ -12,7 +12,7 @@
                 <view class="hotList" style="padding: 0 10rpx;">
                     <block wx:for="{{item}}" wx:key="*this">
                         <view class="hotDetail">
-                            <image src="{{item.coverImgUrl}}" bindload="imageLoad"/>
+                            <image src="{{item.coverImgUrl}}" data-id="{{item.id}}" bindtap="toCatDetail" bindload="imageLoad"/>
                             <view>
                                 <text>{{item.name}}</text>
                             </view>
