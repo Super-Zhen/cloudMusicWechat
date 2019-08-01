@@ -1,4 +1,41 @@
 <!--pages/me/me.wxml-->
-<view class="{{isLogin}}">
-{{loginInfo}}
+<view class="{{isLogin}}" style="position: relative">
+   <view class="bgImg" style="background-image: url('{{loginInfo.profile.backgroundUrl}}')">
+       <view style="width: 100%;height: 100%;background-color: black;opacity: 0.5"></view>
+   </view>
+    <view>
+        <image src="{{loginInfo.profile.avatarUrl}}" class="headImg"></image>
+        <view class="userContent">
+            <view class="nickName">{{loginInfo.profile.nickname}}</view>
+            <view>
+                <text class="follows">关注{{loginInfo.profile.follows}}</text>
+                <text>粉丝{{loginInfo.profile.followeds}}</text>
+                <view>{{loginInfo.profile.signature}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="tab">
+        <scroll-view class="tab-h" >
+            <block wx:for="{{meList}}" wx:key="" wx:for-index="bindex">
+                <view class="tab-item {{currentTab==bindex?'active':''}}"  data-current="{{bindex}}" bindtap="swichNav">{{item}}</view>
+            </block>
+        </scroll-view>
+        <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+                style="height:{{winHeight}}rpx">
+            <swiper-item wx:for="{{playList}}" wx:key="{{item}}" >
+                <scroll-view scroll-y="true" class="scoll-h">
+                    <view class="hotList" style="padding: 0 10rpx;">
+                        <block wx:for="{{item}}" wx:key="*this">
+                            <view class="hotDetail">
+                                <image src="{{item.coverImgUrl}}" data-id="{{item.id}}" bindtap="toCatDetail" />
+                                <view>
+                                    <text>{{item.name}}</text>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
 </view>

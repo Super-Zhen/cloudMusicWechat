@@ -57,6 +57,12 @@ module.exports = {
   loginState(){
     return requestData('/login/status')
   },
+  getUserInfo(data){
+    return requestData('/user/detail',data)
+  },
+  getUserPlayList(data){
+    return requestData('/user/playlist',data)
+  },
   getRecommend(){ // 获取推荐歌曲
     return requestData('/recommend/songs')
   },

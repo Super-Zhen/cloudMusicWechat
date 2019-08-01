@@ -1,1 +1,73 @@
 /* pages/me/me.wxss */
+.bgImg{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 750rpx;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+}
+.headImg{
+    width:160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    margin:30rpx;
+}
+.userContent{
+    padding:0 0 40rpx 20rpx;
+    color:#fff;
+    line-height: 56rpx;
+}
+.nickName{
+    font-size: 40rpx;
+}
+.follows{
+    margin-right: 20rpx;
+}
+.tab{
+    width: 100%;
+    border-radius: 20rpx 20rpx 0 0;
+    min-height: 800rpx;
+    background: #fff;
+}
+.tab-h{
+    height: 80rpx;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    /*background: #f7f7f7;*/
+    font-size: 16px;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.tab-item{
+    margin: 0 84rpx;
+    display: inline-block;
+}
+.tab-item.active {
+    color: red;
+    position: relative;
+}
+
+.tab-item.active:after {
+    content: "";
+    display: block;
+    height: 8rpx;
+    width: 52rpx;
+    background: red;
+    position: absolute;
+    bottom: 0;
+    left: 5rpx;
+    border-radius: 16rpx;
+}
+.scoll-h {
+    height: 100%;
+
+}
