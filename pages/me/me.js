@@ -1,5 +1,6 @@
 // pages/me/me.js
 const API = require('../../apiData/api')
+const util = require('../../utils/util')
 const app = getApp()
 Page({
 
@@ -12,7 +13,9 @@ Page({
     meList:['音乐','动态','关于我'],
     currentTab:1,
     winHeight:'',
-    playList:[[],[],[]]
+    playList:[],
+    eventsList:[],
+    aboutMe:''
   },
 
   /**
@@ -36,7 +39,7 @@ Page({
   },
   swichNav:function(e){
     var that = this
-    debugger
+    // debugger
     var cur = e.target.dataset.current;
     if (this.data.currentTab === cur) {
       return false;
@@ -47,7 +50,7 @@ Page({
     }
   },
   switchTab: function(e) {
-    debugger
+    // debugger
     let that = this
     console.log(e.detail)
 //e.detail.current现在是在哪一个选项卡里面
@@ -56,29 +59,44 @@ Page({
         this.setData({
           currentTab: e.detail.current
         });
-        that.getUserPlayList(that.data.loginInfo.profile.userId)
+        that.getUserPlayList(that.data.loginInfo.profile.userId,e.detail.current)
         break;
       case 1:
         this.setData({
           currentTab: e.detail.current
         });
-        that.getTopPlaylistHigh( {offset:0},1)
+        that.getUserEvent(that.data.loginInfo.profile.userId,e.detail.current)
         break;
       case 2:
         this.setData({
           currentTab: e.detail.current,
         });
-        that.getTopPlaylistHigh( {offset:0,cat:'华语'},2)
+        that.getUserPlayList(that.data.loginInfo.profile.userId,e.detail.current)
         break;
     }
   },
-  getUserPlayList(id){
+  getUserPlayList(id,index){
     let that = this
     API.getUserPlayList({uid:id}).then(res=>{
       if(res.code === 200){
-        that.data.playList[0] = res.playlist
         this.setData({
-          playList:that.data.playList
+          playList:res.playlist
+        })
+      }
+    })
+  },
+  getUserEvent(id,index){
+    let that = this
+    API.getUserEvent({uid:id}).then(res=>{
+      if(res.code === 200){
+        that.data.eventsList = res.events
+        let data = that.data.eventsList.map(item=>{
+          item.json = JSON.parse(item.json)
+          item.showTime = util.formatTime(item.showTime)
+          return item
+        })
+        this.setData({
+          eventsList:data
         })
       }
     })

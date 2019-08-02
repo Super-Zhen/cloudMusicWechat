@@ -1,5 +1,5 @@
 //app.js
-const BASEURL = 'http://192.168.1.3:3000'
+const BASEURL = 'http://localhost:3000'
 // const BASEURL = 'http://172.20.10.2:3000'
 const requestData = (url , data ) => {
   let httpUrl = BASEURL + url
@@ -62,6 +62,9 @@ module.exports = {
   },
   getUserPlayList(data){
     return requestData('/user/playlist',data)
+  },
+  getUserEvent(data){
+    return requestData('/user/event',data)
   },
   getRecommend(){ // 获取推荐歌曲
     return requestData('/recommend/songs')
