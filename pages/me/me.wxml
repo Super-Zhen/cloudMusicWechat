@@ -53,6 +53,15 @@
                                     <block wx:for="{{item.pics}}" wx:for-item="pic" wx:key="item">
                                         <image src="{{pic.originUrl}}" style='width: 80%' mode="widthFix"></image>
                                     </block>
+                                    <view wx:if="{{item.json.song}}">
+                                        <view style="display: flex;justify-content: flex-start">
+                                            <image class='songImg' src="{{item.json.song.album.img80x80}}"></image>
+                                            <view>
+                                                <view>{{item.json.song.name}}</view>
+                                                <view>{{item.json.song.album.artists[0].name}}</view>
+                                            </view>
+                                        </view>
+                                    </view>
                                 </view>
 
                             </view>
@@ -66,7 +75,7 @@
                     <view class="hotList" style="padding: 0 10rpx;">
                         <block wx:for="{{item}}" wx:key="*this" >
                             <view class="">
-                                <image src="{{item.coverImgUrl}}" data-id="{{item.id}}" bindtap="toCatDetail" />
+                                <image class='songImg' src="{{item.coverImgUrl}}" data-id="{{item.id}}" bindtap="toCatDetail" />
                                 <view>
                                     <text>{{item.name}}</text>
                                 </view>

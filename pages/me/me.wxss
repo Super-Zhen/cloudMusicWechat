@@ -94,3 +94,7 @@
 .showTime{
     font-size: 22rpx;
 }
+.songImg{
+    width: 80rpx;
+    height: 80rpx;
+}
