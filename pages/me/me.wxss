@@ -97,4 +97,5 @@
 .songImg{
     width: 80rpx;
     height: 80rpx;
+    padding-right: 20rpx;
 }
