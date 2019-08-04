@@ -92,9 +92,16 @@ Page({
     API.getSongLyric({id:id}).then(res=>{
       console.log(res)
       if(res.code===200){
-        this.setData({
-          lyric: res.lyric.replace(/\[[0-9]{2}:[0-9]{2}\.[0-9]{1,3}\]/g,'')
-        })
+        if(res.nolyric){
+          this.setData({
+            lyric: '暂无歌词'
+          })
+        }else{
+          this.setData({
+            lyric: res.lyric.replace(/\[[0-9]{2}:[0-9]{2}\.[0-9]{1,3}\]/g,'')
+          })
+        }
+
       }
     })
   },
@@ -190,7 +197,7 @@ Page({
  * 判断歌曲是否播放完毕然后判断是单曲还是列表循环
  */
   onSongEnd(){
-    debugger
+    // debugger
     if(this.data.BackgroundAudioManager.currentTime === 0){
       if(this.data.repeatType === 'repeatOne'){
         this.playSong(app.globalData.songId)

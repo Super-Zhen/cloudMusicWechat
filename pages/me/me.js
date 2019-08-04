@@ -11,7 +11,7 @@ Page({
     isLogin:'hide',
     loginInfo:'',
     meList:['音乐','动态','关于我'],
-    currentTab:1,
+    currentTab:0,
     winHeight:'',
     playList:[],
     eventsList:[],
@@ -36,6 +36,7 @@ Page({
         });
       }
     });
+
   },
   swichNav:function(e){
     var that = this
@@ -101,6 +102,15 @@ Page({
       }
     })
   },
+  toplayer(e){
+    API.toplayer(e)
+  },
+  toCatDetail(e){
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../catlist/catDetail?id='+id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -124,13 +134,16 @@ Page({
       }else{
         API.getUserInfo({uid:res.profile.userId}).then(res=>{
           if(res.code === 200){
+            res.profile.birthday = Math.floor((new Date().getTime() -res.profile.birthday)/1000/60/60/24/365)
             this.setData({
               isLogin:'show',
               loginInfo:res
             })
+            this.getUserPlayList(res.profile.userId)
           }
         })
         wx.hideLoading()
+
       }
     })
 

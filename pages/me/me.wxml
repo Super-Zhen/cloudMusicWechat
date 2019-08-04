@@ -8,8 +8,8 @@
         <view class="userContent">
             <view class="nickName">{{loginInfo.profile.nickname}}</view>
             <view>
-                <text class="follows">关注{{loginInfo.profile.follows}}</text>
-                <text>粉丝{{loginInfo.profile.followeds}}</text>
+                <text class="follows">关注 {{loginInfo.profile.follows}}</text>
+                <text>粉丝 {{loginInfo.profile.followeds}}</text>
                 <view>{{loginInfo.profile.signature}}</view>
             </view>
         </view>
@@ -54,7 +54,7 @@
                                         <image src="{{pic.originUrl}}" style='width: 80%' mode="widthFix"></image>
                                     </block>
                                     <view wx:if="{{item.json.song}}">
-                                        <view style="display: flex;justify-content: flex-start">
+                                        <view style="display: flex;justify-content: flex-start;padding-bottom: 10rpx" data-id="{{item.json.song.id}}" bindtap="toplayer">
                                             <image class='songImg' src="{{item.json.song.album.img80x80}}"></image>
                                             <view>
                                                 <view>{{item.json.song.name}}</view>
@@ -63,24 +63,20 @@
                                         </view>
                                     </view>
                                 </view>
-
                             </view>
-
                         </block>
                     </view>
                 </scroll-view>
             </swiper-item>
             <swiper-item>
                 <scroll-view scroll-y="true" class="scoll-h" >
-                    <view class="hotList" style="padding: 0 10rpx;">
-                        <block wx:for="{{item}}" wx:key="*this" >
-                            <view class="">
-                                <image class='songImg' src="{{item.coverImgUrl}}" data-id="{{item.id}}" bindtap="toCatDetail" />
-                                <view>
-                                    <text>{{item.name}}</text>
-                                </view>
-                            </view>
-                        </block>
+                    <view class="" style="padding: 0 10rpx;">
+                        <view>个人信息</view>
+                        <view>等级：LV{{loginInfo.level}}</view>
+                        <view>性别：{{loginInfo.profile.gender==1?'男':'女'}}</view>
+                        <view>年龄：{{loginInfo.profile.birthday}}</view>
+                        <view>地区：</view>
+                        <view>社交账号：</view>
                     </view>
                 </scroll-view>
             </swiper-item>
