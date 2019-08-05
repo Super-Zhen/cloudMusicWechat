@@ -27,6 +27,52 @@
 .font28{
   font-size: 28rpx;
 }
+.font30{
+  font-size: 30rpx;
+}
+.pdr10{
+  padding-right: 10rpx;
+}
+.pdl10{
+   padding-left: 10rpx;
+ }
+.pdt10{
+  padding-top: 10rpx;
+}
+.pdb10{
+  padding-bottom: 10rpx;
+}
+.pdt20{
+  padding-top: 20rpx;
+}
+.pdb20{
+  padding-bottom: 20rpx;
+}
+
+.pdr20{
+  padding-right: 20rpx;
+}
+.pdl20{
+  padding-left: 20rpx;
+}
+.imgWH{
+  width: 120rpx;
+}
+.borderCircle{
+  border-radius: 100%;
+}
+.flex,.flexAIC,.flexJCC{
+  display: flex;
+}
+.flexAIC{
+  align-items: center;
+}
+.flexJCC{
+  justify-content: center;
+}
+.overFHide{
+  overflow: hidden;
+}
 .weui-search-bar{
  background-color: transparent;
   border: none;

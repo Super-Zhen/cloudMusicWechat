@@ -29,7 +29,7 @@ Page({
       data: e.detail.value,
       success(result) {
        app.globalData.loginInfo = result.data
-        wx.reLaunch({
+        wx.switchTab({
           url:"../index/index"
         })
       },

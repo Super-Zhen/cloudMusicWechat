@@ -78,6 +78,9 @@ module.exports = {
   getCatDetail(data){
     return requestData('/playlist/detail',data)
   },
+  getFans(data){
+    return requestData('/user/followeds',data)
+  },
   toplayer(e){
     let id = e.currentTarget.dataset.id
     console.log(id)

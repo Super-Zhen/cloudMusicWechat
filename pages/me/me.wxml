@@ -70,13 +70,25 @@
             </swiper-item>
             <swiper-item>
                 <scroll-view scroll-y="true" class="scoll-h" >
-                    <view class="" style="padding: 0 10rpx;">
+                    <view class="info pdl20">
                         <view>个人信息</view>
-                        <view>等级：LV{{loginInfo.level}}</view>
-                        <view>性别：{{loginInfo.profile.gender==1?'男':'女'}}</view>
-                        <view>年龄：{{loginInfo.profile.birthday}}</view>
-                        <view>地区：</view>
-                        <view>社交账号：</view>
+                        <view class="pdl20">
+                            <view class="font30">等级：LV{{loginInfo.level}}</view>
+                            <view class="font30">性别：{{loginInfo.profile.gender==1?'男':'女'}}</view>
+                            <view class="font30">年龄：{{loginInfo.profile.birthday}}</view>
+                        </view>
+                        <view>我的粉丝</view>
+                          <block wx:for="{{fansList}}" wx:key="{{item.userId}}">
+                            <view class="flex pdt10 pdb10 font30">
+                              <image mode="widthFix" style="vertical-align: top" class="imgWH borderCircle" src="{{item.avatarUrl}}"></image>
+                              <view class="flexAIC pdl20">
+                                <view>
+                                  <text decode="{{true}}" space="{{true}}">{{item.nickname}}&nbsp;&nbsp;&nbsp;{{item.gender==1?'男':'女'}}</text>
+                                  <view wx:if="{{item.signature}}" style="white-space:nowrap;width: 540rpx;text-overflow: ellipsis;overflow: hidden;">{{item.signature}}</view>
+                                </view>
+                              </view>
+                            </view>
+                          </block>
                     </view>
                 </scroll-view>
             </swiper-item>

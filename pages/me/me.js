@@ -15,7 +15,8 @@ Page({
     winHeight:'',
     playList:[],
     eventsList:[],
-    aboutMe:''
+    aboutMe:'',
+    fansList:[]
   },
 
   /**
@@ -72,7 +73,7 @@ Page({
         this.setData({
           currentTab: e.detail.current,
         });
-        that.getUserPlayList(that.data.loginInfo.profile.userId,e.detail.current)
+        that.getFans(that.data.loginInfo.profile.userId)
         break;
     }
   },
@@ -82,6 +83,16 @@ Page({
       if(res.code === 200){
         this.setData({
           playList:res.playlist
+        })
+      }
+    })
+  },
+  getFans(id){
+    let that = this
+    API.getFans({uid:id}).then(res=>{
+      if(res.code == 200){
+        this.setData({
+          fansList:res.followeds
         })
       }
     })

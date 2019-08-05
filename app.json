@@ -6,7 +6,8 @@
     "pages/me/me",
     "pages/recommend/recommend",
     "pages/catlist/catlist",
-    "pages/catlist/catDetail"
+    "pages/catlist/catDetail",
+    "pages/mine/mine"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,7 +34,7 @@
         "selectedIconPath": "images/videoActive.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/mine/mine",
         "text": "我的",
         "iconPath": "images/music.png",
         "selectedIconPath": "images/musicActive.png"
