@@ -100,8 +100,11 @@ module.exports = {
   getCatDetail(data){
     return requestData('/playlist/detail',data)
   },
-  getFans(data){
+  getFans(data){ // 获取用户粉丝列表
     return requestData('/user/followeds',data)
+  },
+  getCares(data){
+    return requestData('/user/follows',data)
   },
   toplayer(e){
     let id = e.currentTarget.dataset.id

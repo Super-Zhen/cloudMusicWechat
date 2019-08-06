@@ -33,17 +33,35 @@
 .font30{
   font-size: 30rpx;
 }
+.pd10{
+  padding: 10rpx;
+}
+.pdrl{
+  padding:0 10rpx
+}
 .pdr10{
   padding-right: 10rpx;
 }
 .pdl10{
    padding-left: 10rpx;
  }
+.pdtb10{
+  padding:  10rpx 0;
+}
 .pdt10{
   padding-top: 10rpx;
 }
 .pdb10{
   padding-bottom: 10rpx;
+}
+.mgl10{
+  margin-left: 10rpx;
+}
+.mgr10{
+  margin-right: 10rpx;
+}
+.pd20{
+  padding: 20rpx;
 }
 .pdt20{
   padding-top: 20rpx;
@@ -58,19 +76,20 @@
 .pdl20{
   padding-left: 20rpx;
 }
-.mgt{
+.mgt20{
   margin-top: 20rpx;
 }
-.mgb{
+.mgb20{
   margin-bottom: 20rpx;
 }
+
 .imgWH{
   width: 120rpx;
 }
 .borderCircle{
   border-radius: 100%;
 }
-.flex,.flexAIC,.flexJCC{
+.flex,.flexAIC,.flexJCC,flexDC{
   display: flex;
 }
 .flexAIC{
@@ -78,6 +97,9 @@
 }
 .flexJCC{
   justify-content: center;
+}
+.flexDC{
+  flex-direction: column;
 }
 .overFHide{
   overflow: hidden;

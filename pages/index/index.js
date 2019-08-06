@@ -110,6 +110,11 @@ Page({
     this.getHotGedan()
     this.getNewAlbum()
     this.getNewSong()
+    API.loginState().then(res=>{
+      if(res.code === 200) {
+        app.globalData.userId = res.profile.userId
+      }
+    })
     wx.setStorageSync('repeatType','repeat')
     app.setWatch(this.data,this.watch)
     this.setData({

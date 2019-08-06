@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    follow:[],
+    eventList:[]
   },
 
   /**
@@ -15,16 +16,38 @@ Page({
    */
   onLoad: function (options) {
     this.getEvent()
+    this.getCares()
   },
   /**
    * 获取用户关注动态
    */
   getEvent(){
+    let that = this
     API.getEvent({
       pagesize:30,
       lasttime:''
     }).then(res=>{
-      console.log(res)
+      if(res.code === 200){
+        that.setData({
+          eventList:res.event
+        })
+      }
+    })
+  },
+  /**
+   * 获取用户关注列表
+   */
+  getCares(){
+    let that = this
+    API.getCares({
+      uid:app.globalData.userId,
+      limit:5
+    }).then(res=>{
+      if(res.code ==200){
+        that.setData({
+          follow : res.follow
+        })
+      }
     })
   },
   /**

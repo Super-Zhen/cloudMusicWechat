@@ -3,6 +3,18 @@
   <view style="flex: 1;" class="textCenter">发动态</view>
   <view style="flex: 1;" class="textCenter">发布视频</view>
 </view>
-<view class="pdt20 pdb20">
-  我关注的他们》
+<view class="pd20 flexDC">
+  <view>我关注的他们》</view>
+  <view class="flex pdtb10">
+    <block wx:for="{{follow}}" wx:key="{{item.userId}}">
+      <image src="{{item.avatarUrl}}" alt="" class="borderCircle mgr10 mgl10" data-id="{{item.userId}}" mode="widthFix"></image>
+    </block>
+  </view>
+</view>
+<view>
+  <block wx:for="{{eventList}}" wx:key="{{item.id}}">
+    <view>
+      <image src="{{item.user.avatarUrl}}" class="imgWH borderCircle" mode="widthFix"></image>
+    </view>
+  </block>
 </view>
