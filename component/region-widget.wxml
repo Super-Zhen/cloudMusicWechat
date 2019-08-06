@@ -1,0 +1,10 @@
+<!--pages/mine/region-widget.wxml-->
+<!--<view class="section__title">省市区选择器</view>-->
+<picker
+        mode="multiSelector"
+        value="{{select}}"
+        range="{{region}}"
+        bindchange="bindChange"
+        bindcolumnchange="bindColumnChange">
+  <slot></slot>
+</picker>

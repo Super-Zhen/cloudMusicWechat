@@ -1,4 +1,4 @@
-// pages/login/login.js
+// pages/friends/friends.js
 const API = require('../../apiData/api')
 const app = getApp()
 Page({
@@ -14,32 +14,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.showLoading({
-    //   title: '加载中',
-    // });
-    // console.log(1)
+    this.getEvent()
   },
   /**
-   * 登录方法
+   * 获取用户关注动态
    */
-  formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    const requestTask = wx.request({
-      url: API.BaseUrls+'/login/cellphone',
-      data: e.detail.value,
-      success(result) {
-       app.globalData.loginInfo = result.data
-        wx.switchTab({
-          url:"../me/me"
-        })
-      },
-      fail(err) {
-        console.log(err)
-      }
-    })
-    requestTask.onHeadersReceived(function (data) {
-      console.log(data.header.cookie)
-      wx.setStorageSync("sessionid", data.header["Set-Cookie"])
+  getEvent(){
+    API.getEvent({
+      pagesize:30,
+      lasttime:''
+    }).then(res=>{
+      console.log(res)
     })
   },
   /**

@@ -1,0 +1,5 @@
+picker{
+  width: 200upx;
+  height: 200upx;
+  margin: 200upx;
+}

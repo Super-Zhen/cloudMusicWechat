@@ -12,7 +12,26 @@ const requestData = (url , data ) => {
         'cookie':wx.getStorageSync("sessionid")
       },
       success(result) {
-        resolve(result.data)
+        if(result.data.code === 301){
+          wx.showModal({
+            // title: '提示',
+            content: '需要登录',
+            success (res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url:'../login/login'
+                })
+              } else if (res.cancel) {
+                debugger
+                wx.switchTab({
+                  url:'../index/index'
+                })
+              }
+            }
+          })
+        }else{
+          resolve(result.data)
+        }
       },
       fail(err) {
         reject(err)
@@ -65,6 +84,9 @@ module.exports = {
   },
   getUserEvent(data){
     return requestData('/user/event',data)
+  },
+  getEvent(data){ // 获取用户关注好友动态
+    return requestData('/event',data)
   },
   getRecommend(){ // 获取推荐歌曲
     return requestData('/recommend/songs')

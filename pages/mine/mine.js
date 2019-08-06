@@ -1,47 +1,35 @@
-// pages/login/login.js
-const API = require('../../apiData/api')
-const app = getApp()
+// const area = require('../../apiData/area')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    select:["广东省","广州市"],
+    region: ['广东省', '广州市', '海珠区']
+  },
+  onRegionChange:function(e){
+    debugger
+    console.log(e.detail);
+    this.setData({select: [e.detail.province, e.detail.city]})
+  },
+  bindRegionChange: function (e) {
+    debugger
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.showLoading({
-    //   title: '加载中',
-    // });
-    // console.log(1)
-  },
-  /**
-   * 登录方法
-   */
-  formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    const requestTask = wx.request({
-      url: API.BaseUrls+'/login/cellphone',
-      data: e.detail.value,
-      success(result) {
-       app.globalData.loginInfo = result.data
-        wx.switchTab({
-          url:"../me/me"
-        })
-      },
-      fail(err) {
-        console.log(err)
-      }
-    })
-    requestTask.onHeadersReceived(function (data) {
-      console.log(data.header.cookie)
-      wx.setStorageSync("sessionid", data.header["Set-Cookie"])
+    wx.showShareMenu({
+      withShareTicket: true
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

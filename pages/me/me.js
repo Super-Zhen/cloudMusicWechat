@@ -133,13 +133,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.showLoading({
-      title: '加载中',
-    })
+    // wx.showLoading({
+    //   title: '加载中',
+    // })
     console.log('ready')
     API.loginState().then(res=>{
       if(res.code === 301){
-        wx.redirectTo({
+        wx.navigateTo({
           url: '../login/login'
         })
       }else{
@@ -153,7 +153,7 @@ Page({
             this.getUserPlayList(res.profile.userId)
           }
         })
-        wx.hideLoading()
+        // wx.hideLoading()
 
       }
     })

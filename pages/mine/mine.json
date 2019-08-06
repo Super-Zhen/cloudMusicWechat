@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "region-widget":"../../component/region-widget"
+  }
+}

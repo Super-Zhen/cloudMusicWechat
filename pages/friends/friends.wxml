@@ -1,0 +1,8 @@
+<!--pages/friends/friends.wxml-->
+<view class="flex flexAIC flexJCC pdt20 pdb20 borderBccc">
+  <view style="flex: 1;" class="textCenter">发动态</view>
+  <view style="flex: 1;" class="textCenter">发布视频</view>
+</view>
+<view class="pdt20 pdb20">
+  我关注的他们》
+</view>

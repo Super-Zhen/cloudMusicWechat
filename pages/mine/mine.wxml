@@ -1,0 +1,4 @@
+<!--pages/mine/region-widget.wxml-->
+<region-widget target="{{select}}" bindregionChange="onRegionChange">
+  <text decode="{{true}}" space="{{true}}">当前选择：{{select[0]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{select[1]}}</text>
+</region-widget>

@@ -1,0 +1,5 @@
+/* pages/mine/mine.wxss */
+region-widget{
+  width: 200upx;
+  height: 200upx;
+}

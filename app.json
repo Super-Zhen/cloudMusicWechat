@@ -7,7 +7,8 @@
     "pages/recommend/recommend",
     "pages/catlist/catlist",
     "pages/catlist/catDetail",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/friends/friends"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,7 +41,7 @@
         "selectedIconPath": "images/musicActive.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/friends/friends",
         "text": "朋友",
         "iconPath": "images/friends.png",
         "selectedIconPath": "images/friendsActive.png"
