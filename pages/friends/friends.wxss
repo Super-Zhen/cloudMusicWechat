@@ -1,1 +1,30 @@
 /* pages/friends/friends.wxss */
+.EventHeadImg{
+    width:100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin:10rpx;
+}
+.userName{
+    margin-top: 10rpx;
+    padding-right: 10rpx;
+    font-size: 26rpx;
+    color:cornflowerblue;
+}
+.songFlag{
+    padding: 10rpx 0 0 10rpx;
+    color:#666;
+    font-size: 26rpx;
+}
+.eventContent{
+    padding-left: 120rpx;
+    font-size: 26rpx;
+}
+.showTime{
+    font-size: 22rpx;
+}
+.songImg{
+    width: 80rpx;
+    height: 80rpx;
+    padding-right: 20rpx;
+}

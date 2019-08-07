@@ -1,0 +1,10 @@
+var EventTimeFilter = function (param) {
+    console.log(param)
+    // var date = new Date(param)
+    return getDate(param).getFullYear()+"-"+Number(getDate(param).getMonth())+1+"-"+getDate(param).getDate()
+    //
+}
+
+module.exports = {
+    EventTimeFilter: EventTimeFilter,
+};

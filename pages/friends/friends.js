@@ -28,6 +28,8 @@ Page({
       lasttime:''
     }).then(res=>{
       if(res.code === 200){
+        debugger
+        // res.profile.birthday = Math.floor((new Date().getTime() -res.profile.birthday)/1000/60/60/24/365)
         that.setData({
           eventList:res.event
         })

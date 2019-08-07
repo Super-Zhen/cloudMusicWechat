@@ -6,15 +6,43 @@
 <view class="pd20 flexDC">
   <view>我关注的他们》</view>
   <view class="flex pdtb10">
-    <block wx:for="{{follow}}" wx:key="{{item.userId}}">
+    <block wx:for="{{follow}}" wx:key="{{item.userId}}" >
       <image src="{{item.avatarUrl}}" alt="" class="borderCircle mgr10 mgl10" data-id="{{item.userId}}" mode="widthFix"></image>
     </block>
   </view>
 </view>
-<view>
-  <block wx:for="{{eventList}}" wx:key="{{item.id}}">
-    <view>
-      <image src="{{item.user.avatarUrl}}" class="imgWH borderCircle" mode="widthFix"></image>
-    </view>
-  </block>
+
+<view class="" style="padding: 0 10rpx;">
+    <block wx:for="{{eventList}}" wx:key="item.id" >
+      <view wx:if="{{item.user.avatarUrl != null}}">
+        <view style="display: flex;align-items: flex-start">
+          <image src="{{item.user.avatarUrl}}" class="EventHeadImg"></image>
+          <view>
+            <text class="userName">{{item.user.nickname}}</text>
+            <text class="songFlag" wx:if="{{item.info.commentThread.resourceTitle!==null}}">分享单曲</text>:
+            <wxs src='../../filter/EventTimeFilter.wxs' module='EventTimeFilter'></wxs>
+            <view class="showTime">{{EventTimeFilter.EventTimeFilter(item.showTime)}}</view>
+          </view>
+        </view>
+<!--        <view class="eventContent">-->
+<!--          <text>{{item.json.msg}}</text>-->
+<!--          <view>-->
+<!--            <block wx:for="{{item.pics}}" wx:for-item="pic" wx:key="item">-->
+<!--              <image src="{{pic.originUrl}}" style='width: 80%' mode="widthFix"></image>-->
+<!--            </block>-->
+<!--            <view wx:if="{{item.json.song}}">-->
+<!--              <view style="display: flex;justify-content: flex-start;padding-bottom: 10rpx" data-id="{{item.json.song.id}}" bindtap="toplayer">-->
+<!--                <image class='songImg' src="{{item.json.song.album.img80x80}}"></image>-->
+<!--                <view>-->
+<!--                  <view>{{item.json.song.name}}</view>-->
+<!--                  <view>{{item.json.song.album.artists[0].name}}</view>-->
+<!--                </view>-->
+<!--              </view>-->
+<!--            </view>-->
+<!--          </view>-->
+<!--        </view>-->
+      </view>
+
+
+    </block>
 </view>
