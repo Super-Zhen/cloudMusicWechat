@@ -29,7 +29,9 @@ Page({
     }).then(res=>{
       if(res.code === 200){
         debugger
-        // res.profile.birthday = Math.floor((new Date().getTime() -res.profile.birthday)/1000/60/60/24/365)
+        for (let i =0;i<res.event.length;i++){
+          res.event[i].json = JSON.parse(res.event[i].json)
+        }
         that.setData({
           eventList:res.event
         })
