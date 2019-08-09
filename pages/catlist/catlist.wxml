@@ -9,7 +9,7 @@
             style="height:{{winHeight}}rpx">
         <swiper-item wx:for="{{catTitleList}}" wx:key="{{item}}" >
             <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower='lower'>
-                <view class="hotList" style="padding: 0 10rpx;">
+                <view class="hotList pdrl">
                     <block wx:for="{{item}}" wx:key="*this">
                         <view class="hotDetail">
                             <image src="{{item.coverImgUrl}}" data-id="{{item.id}}" bindtap="toCatDetail" bindload="imageLoad"/>

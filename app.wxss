@@ -69,7 +69,6 @@
 .pdb20{
   padding-bottom: 20rpx;
 }
-
 .pdr20{
   padding-right: 20rpx;
 }

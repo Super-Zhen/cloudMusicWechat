@@ -25,7 +25,7 @@
           </view>
         </view>
        <view class="eventContent">
-         <text>{{item.json.msg}}</text>
+         <text>{{item.json.msg}}{{item.json.type}}</text>
          <view>
            <block wx:for="{{item.pics}}" wx:for-item="pic" wx:key="item">
              <image src="{{pic.originUrl}}" style='width: 80%' mode="widthFix"></image>
