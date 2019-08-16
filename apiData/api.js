@@ -106,6 +106,9 @@ module.exports = {
   getCares(data){
     return requestData('/user/follows',data)
   },
+  getVideoList(data){
+    return requestData('/top/mv',data)
+  },
   toplayer(e){
     let id = e.currentTarget.dataset.id
     console.log(id)

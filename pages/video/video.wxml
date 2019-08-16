@@ -1,0 +1,14 @@
+<!--pages/video/video.wxml-->
+<block wx:for="{{videoList}}" wx:key="{{item.id}}">
+  <view class="flexDC videoBox">
+    <view class="flexAIC flexJCC">
+      <image src="{{item.cover}}" mode="widthFix"></image>
+    </view>
+    <view>
+      <view>
+        <text>{{item.name}}</text>-
+        <text>{{item.artistName}}</text>
+      </view>
+    </view>
+  </view>
+</block>

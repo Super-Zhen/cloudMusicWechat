@@ -8,7 +8,8 @@
     "pages/catlist/catlist",
     "pages/catlist/catDetail",
     "pages/mine/mine",
-    "pages/friends/friends"
+    "pages/friends/friends",
+    "pages/video/video"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,7 +30,7 @@
         "selectedIconPath": "images/findActive.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/video/video",
         "text": "视频",
         "iconPath": "images/video.png",
         "selectedIconPath": "images/videoActive.png"

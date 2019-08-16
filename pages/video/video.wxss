@@ -1,0 +1,7 @@
+/* pages/video/video.wxss */
+.videoBox{
+  padding:20rpx;
+}
+.videoBox image{
+  width: 100%
+}
