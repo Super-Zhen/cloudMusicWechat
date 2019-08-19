@@ -2,6 +2,9 @@
 .videoBox{
   padding:20rpx;
 }
-.videoBox image{
+.videoBox image.bgImg{
   width: 100%
+}
+.scoll-h{
+  width:100%
 }

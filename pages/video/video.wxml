@@ -1,14 +1,23 @@
 <!--pages/video/video.wxml-->
-<block wx:for="{{videoList}}" wx:key="{{item.id}}">
-  <view class="flexDC videoBox">
-    <view class="flexAIC flexJCC">
-      <image src="{{item.cover}}" mode="widthFix"></image>
-    </view>
-    <view>
-      <view>
-        <text>{{item.name}}</text>-
-        <text>{{item.artistName}}</text>
-      </view>
-    </view>
-  </view>
-</block>
+<swiper style="height:{{winHeight}}rpx;">
+  <swiper-item>
+    <scroll-view scroll-y='true' style="height:{{winHeight}}rpx;" bindscrolltolower='lower'>
+        <block wx:for="{{videoList}}" wx:key="{{item.id}}">
+          <view class="flexDC videoBox">
+            <view class="flexAIC flexJCC positionR">
+              <image src="{{item.cover}}" class='bgImg' mode="widthFix"></image>
+              <view class="positionA">
+                <image src="../../images/video.png" style="width:200rpx" mode="widthFix"></image>
+              </view>
+            </view>
+            <view>
+              <view>
+                <text>{{item.name}}</text>-
+                <text>{{item.artistName}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>
