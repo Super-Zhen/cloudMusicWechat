@@ -109,6 +109,9 @@ module.exports = {
   getVideoList(data){
     return requestData('/top/mv',data)
   },
+  getVieoPlayUrl(data){
+    return requestData("/mv/url",data)
+  },
   toplayer(e){
     let id = e.currentTarget.dataset.id
     console.log(id)

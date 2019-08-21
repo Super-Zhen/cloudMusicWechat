@@ -51,6 +51,15 @@ Page({
     console.log(1)
   },
   /**
+   * 获取视频地址
+   */
+  videoInfo(e){
+    console.log(e.currentTarget.dataset.id)
+    API.getVieoPlayUrl({id:e.currentTarget.dataset.id}).then(res=>{
+      console.log(res)
+    })
+  },
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
