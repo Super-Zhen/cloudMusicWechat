@@ -104,7 +104,7 @@ Page({
         that.data.eventsList = res.events
         let data = that.data.eventsList.map(item=>{
           item.json = JSON.parse(item.json)
-          item.showTime = util.formatTime(item.showTime)
+          item.showTime = util.getDiffTime(item.showTime)
           return item
         })
         this.setData({
