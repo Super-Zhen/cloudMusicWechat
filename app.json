@@ -9,7 +9,8 @@
     "pages/catlist/catDetail",
     "pages/mine/mine",
     "pages/friends/friends",
-    "pages/video/video"
+    "pages/video/video",
+    "component/list-view/list-view"
   ],
   "window": {
     "backgroundTextStyle": "light",

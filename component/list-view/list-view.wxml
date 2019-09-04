@@ -1,0 +1,9 @@
+<!--component/list-view/list-view.wxml-->
+<template name='listView'>
+  <view class="hotDetail">
+    <image src="{{coverImgUrl}}" data-id="{{id}}" bindtap="toCatDetail"/>
+    <view>
+      <text>{{name}}</text>
+    </view>
+  </view>
+</template>

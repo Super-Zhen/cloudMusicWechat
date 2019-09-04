@@ -68,13 +68,9 @@
         <text class="right" bindtap="toCatList">歌单广场</text>
       </view>
       <view class="hotList">
-        <block wx:for="{{HotgeDan}}" wx:key="{{item.id}}">
-          <view class="hotDetail">
-            <image src="{{item.coverImgUrl}}" data-id="{{item.id}}" bindtap="toCatDetail"/>
-            <view>
-              <text>{{item.name}}</text>
-            </view>
-          </view>
+      <import src='../../component/list-view/list-view.wxml'/>
+        <block wx:for="{{HotgeDan}}" wx:for-item="item" wx:key="{{item.id}}">
+          <template is='listView' data="{{...item}}" />
         </block>
       </view>
     </view>
